@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012, QGIS project
 # This file is distributed under the same license as the QGIS Documentation Project package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,17 +10,19 @@ msgstr ""
 "POT-Creation-Date: 2012-11-19 11:09\n"
 "PO-Revision-Date: 2013-03-06 11:04+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/inasafe/language/id/)\n"
+"Language-Team: Indonesian "
+"(http://www.transifex.com/projects/p/inasafe/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: id\n"
 
 # 034424fb119d45c890d1f28f4b12e42c
 #: ../../source/developer-docs/bug_reporting.rst:7
 msgid "Reporting bugs and getting help"
-msgstr ""
+msgstr "Laporan kesalahan dan mendapatkan bantuan"
 
 # 1ac5ddc24a4b44ab9c6444042d4b3356
 #: ../../source/developer-docs/bug_reporting.rst:9
@@ -29,8 +31,11 @@ msgid ""
 "- it is open source after all! If you experience an issue you can report it "
 "here:"
 msgstr ""
+"Kita sangat terbuka untuk ide-idenya,saran dan patch untuk memperbaiki "
+"software ini - hal itu adalah open source setelah semua! Jika Anda mengalami "
+"masalah Anda dapat melaporkannya di sini:"
 
 # 3decf6d7e1904257a432c3e913965226
 #: ../../source/developer-docs/bug_reporting.rst:12
 msgid "Issue tracker: https://github.com/AIFDR/inasafe/issues"
-msgstr ""
+msgstr "Isu traker: https://github.com/AIFDR/inasafe/issues"

@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012, QGIS project
 # This file is distributed under the same license as the QGIS Documentation Project package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,98 +10,132 @@ msgstr ""
 "POT-Creation-Date: 2013-03-07 10:27\n"
 "PO-Revision-Date: 2013-03-07 09:25+0000\n"
 "Last-Translator: timlinux <tim@linfiniti.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/inasafe/language/id/)\n"
+"Language-Team: Indonesian "
+"(http://www.transifex.com/projects/p/inasafe/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: id_ID\n"
 
 # 6ed9726d2ad54fee9bae45a59e42de0f
 #: ../../source/developer-docs/coding_standards.rst:7
+#, fuzzy
 msgid "Coding Standards"
-msgstr ""
+msgstr "Standar Pengkodean"
 
 # 08eac0e5d306463eadbb60df40414412
 #: ../../source/developer-docs/coding_standards.rst:10
+#, fuzzy
 msgid "Code Style"
-msgstr ""
+msgstr "Gaya Code"
 
 # 70cfaa88a34e4847a47fdf5c9dd3d02e
 #: ../../source/developer-docs/coding_standards.rst:12
+#, fuzzy
 msgid ""
 "Please observe the following coding standards when working on the codebase:"
 msgstr ""
+"Mohon diperhatikan standar pengkodean berikut ketika bekerja pada basis kode:"
 
 # f42d5e6d98264f99900fba69d92356ef
 #: ../../source/developer-docs/coding_standards.rst:14
+#, fuzzy
 msgid "Docstrings quoted with :samp:`\"\"\"`"
-msgstr ""
+msgstr "Docstrings dikutip dengan :samp:`\"\"\"`"
 
 # f2ec96051ce94c3a8ea22e20485d7aa9
 #: ../../source/developer-docs/coding_standards.rst:15
+#, fuzzy
 msgid "Simple strings in source code should be quoted with :samp:`'`"
-msgstr ""
+msgstr "String sederhana pada kode sumber harus dikutip dengan :samp:`'`"
 
 # 54245889d0b149dea5b9ddb6e5aeb0af
 #: ../../source/developer-docs/coding_standards.rst:16
+#, fuzzy
 msgid ""
 "Coding must follow a style guide. In case of Python it is `pep8 "
 "<http://www.python.org/dev/peps/pep-0008>`_ and using the command line tool "
 "pep8 (or :samp:`make pep8`) to enforce this. The pep8 checks E121-E128 have "
 "been disabled until pep8 version 1.3 becomes widely available."
 msgstr ""
+"Pengkodean harus mengikuti panduan. Dalam kasus Python ini adalah `pep8 "
+"<http://www.python.org/dev/peps/pep-0008>`_dan menggunakan alat baris "
+"perintah (atau :samp:`membuat pep8`) untuk mendesak ini. Pep8 mengecek "
+"E121-E128 telah dinonaktifkan semenjak pep8 versi 1.3 telah sangat tersedia."
 
 # 97d8635ea2c94cc796858850b012cc19
 #: ../../source/developer-docs/coding_standards.rst:20
-msgid ""
-"`Python documentation guide <http://www.python.org/dev/peps/pep-0257>`_"
-msgstr ""
+#, fuzzy
+msgid "`Python documentation guide <http://www.python.org/dev/peps/pep-0257>`_"
+msgstr "Dokumen petunjuk Python <http://www.python.org/dev/peps/pep-0257>`_"
 
 # fd98b37673e244da8add28a3cacbd1aa
 #: ../../source/developer-docs/coding_standards.rst:21
+#, fuzzy
 msgid ""
-"Comments should be complete sentences. If a comment is a phrase or sentence,"
-" its first word should be capitalized, unless it is an identifier that "
-"begins with a lower case letter (never alter the case of identifiers!). "
-"Comments should start with a # and a single space."
+"Comments should be complete sentences. If a comment is a phrase or sentence, "
+"its first word should be capitalized, unless it is an identifier that begins "
+"with a lower case letter (never alter the case of identifiers!). Comments "
+"should start with a # and a single space."
 msgstr ""
+"Komentar harus merupakan kalimat lengkap. Jika komentar adalah sebuah frase "
+"atau kalimat, kata pertama yang harus dikapitalisasi, kecuali itu adalah "
+"pengidentifikasi yang diawali dengan huruf kecil (tidak pernah mengubah "
+"kasus pengidentifikasi!). Komentar harus dimulai dengan # dan satu spasi."
 
 # d7887ba248b141c282ce72876ac013d8
 #: ../../source/developer-docs/coding_standards.rst:22
+#, fuzzy
 msgid ""
 "Adherence to regression/unit testing wherever possible (:samp:`make test`)"
 msgstr ""
+"Kepatuhan terhadap regresi / unit pengujian sedapat mungkin (: Samp: `make "
+"test`)"
 
 # d78c802ef7c84f038706362ec4a834c7
 #: ../../source/developer-docs/coding_standards.rst:23
+#, fuzzy
 msgid "Use of github for revision control, issue tracking and management"
-msgstr ""
+msgstr "Gunakan github untuk mengongtrol revisi,traking masalah dan menejemen"
 
 # e1b03dd1573c4b75827ac841eef201f9
 #: ../../source/developer-docs/coding_standards.rst:24
+#, fuzzy
 msgid ""
 "Simple deployment procedure - all dependencies must be delivered with the "
 "plugin installer for QGIS or exist in standard QGIS installs."
 msgstr ""
+"Prosedur penyebaran sederhana - semua dependensi harus disampaikan dengan "
+"instalasir plugin untuk QGIS atau ada dalam menginstal QGIS standar."
 
 # f248b27f763743ffbcadb4dd4fa558b3
 #: ../../source/developer-docs/coding_standards.rst:26
+#, fuzzy
 msgid ""
 "Develop in the spirit of XP/Agile, i.e. frequent releases, continuous "
 "integration and iterative development. The master branch should always be "
 "assumed to represent a working demo with all tests passing."
 msgstr ""
+"Mengembangkan dalam semangat XP / Agile, yaitu sering merilis, integrasi "
+"yang berkesinambungan dan pengembangan yang berulang. Cabang master harus "
+"selalu diasumsikan untuk mewakili demo bekerja dengan semua tes yang "
+"dilewati."
 
 # 0b293a4b35f84c18ac29f83f44a1d59f
 #: ../../source/developer-docs/coding_standards.rst:29
+#, fuzzy
 msgid ""
 "All strings should be internationalisation enabled. Please see :doc:`i18n` "
 "for details."
 msgstr ""
+"Semua string harus diaktifkan secara internasional. Tolong lihat :dok:`i18n` "
+"untuk detilnya."
 
 # 73b61f3752b8466684a4c019579ba9b9
 #: ../../source/developer-docs/coding_standards.rst:31
+#, fuzzy
 msgid ""
 "Code must pass a pylint validation "
 "(http://www.logilab.org/card/pylint_manual#what-is-pylint). You can test "
@@ -109,194 +143,269 @@ msgid ""
 "override a line or group of lines so that they are not validated by lint. "
 "You can do this by adding either::"
 msgstr ""
+"Kode harus lulus validasi pylint "
+"(http://www.logilab.org/card/pylint_manual#what-is-pylint). Anda dapat "
+"mengujinya dengan menggunakan target dengan membuat `` `` make  pylint. "
+"Dalam beberapa kasus, Anda mungkin ingin mengganti garis atau kelompok garis "
+"sehingga mereka tidak divalidasi oleh serat. Anda dapat melakukan hal yang "
+"baik dengan menambahkan ::"
 
 # 572e6caad6f941c091553214ddfe8536
 #: ../../source/developer-docs/coding_standards.rst:38
+#, fuzzy
 msgid "or::"
-msgstr ""
+msgstr "atau::"
 
 # 11db316537734336bc7b3522c5c08a87
 #: ../../source/developer-docs/coding_standards.rst:45
+#, fuzzy
 msgid ""
 "The relevant id (W1234) is provided on the output of the above mentioned "
-"lint command's output. A complete list of codes is available at http"
-"://pylint-messages.wikidot.com/all-codes."
+"lint command's output. A complete list of codes is available at "
+"http://pylint-messages.wikidot.com/all-codes."
 msgstr ""
+"Id (W1234) yang relevan disediakan pada output dari output disebutkan di "
+"atas serat perintah itu. Sebuah daftar lengkap kode tersedia di "
+"http://pylint-messages.wikidot.com/all-codes."
 
 # 296eb42da859489a9094f446b42e97e2
 #: ../../source/developer-docs/coding_standards.rst:49
+#, fuzzy
 msgid ""
 "You can globally ignore messages by adding them to :file:`pylintrc` in the "
 ":samp:`[MESSAGES CONTROL]` section."
 msgstr ""
+"Anda dapat tolak secara global pesan-pesannya dengan menambahkan itu ke "
+":file:`pylintrc` di dalam:samp:`[MESSAGES CONTROL]` section."
 
 # 27025769894946aa85bb7e37ac290afc
 #: ../../source/developer-docs/coding_standards.rst:52
+#, fuzzy
 msgid ""
 "The following pylint messages have been thus globally excluded from the "
 "check. For a discussion of these see also github issue "
 "https://github.com/AIFDR/inasafe/issues/245."
 msgstr ""
+"Pesan pylint berikut telah demikian global dikeluarkan dari cek. Untuk "
+"diskusi ini lihat juga masalah github "
+"https://github.com/AIFDR/inasafe/issues/245."
 
 # f382ca3fd37849aaa145f93d14168168
 #: ../../source/developer-docs/coding_standards.rst:56
+#, fuzzy
 msgid "variables. We may bring some back later."
-msgstr ""
+msgstr "Variabel-variabel. Kita dapat memberinya nanti."
 
 # 4949339f449e413caca49156304434d8
 #: ../../source/developer-docs/coding_standards.rst:57
+#, fuzzy
 msgid "All type I: Information only"
-msgstr ""
+msgstr "Semua tipe I:hanya informasi"
 
 # bce86fffa4c040eab843cb904a21bd2d
 #: ../../source/developer-docs/coding_standards.rst:58
+#, fuzzy
 msgid "W0142: Allow the Python feature F(*args, **kwargs)"
-msgstr ""
+msgstr "W0142: biarkan fitur Python  F(*args, **kwargs)"
 
 # b392d334c3b34b36832e1c22c083daed
 #: ../../source/developer-docs/coding_standards.rst:59
+#, fuzzy
 msgid "W0201: Allow definition of class attributes outside the constructor."
-msgstr ""
+msgstr "W0201: Memungkinkan definisi atribut di luar kelas konstruktor."
 
 # d581de61e58c493baf0f191a6b6e738e
 #: ../../source/developer-docs/coding_standards.rst:60
+#, fuzzy
 msgid "W0212: Allow access to protected members (e.g. _show_system_info)"
 msgstr ""
+"W0212: Izinkan akses untuk melindungi anggota (misalnya _show_system_info)"
 
 # de1ec82c46434de3bd4c1b71e3b8b5c9
 #: ../../source/developer-docs/coding_standards.rst:61
+#, fuzzy
 msgid "W0231: Allow classes without constructors."
-msgstr ""
+msgstr "W0231: Izinkan pengklasan tanpa contruktor."
 
 # 71b8a9e914064e0886cddd49df13deac
 #: ../../source/developer-docs/coding_standards.rst:62
+#, fuzzy
 msgid "W0232: Un-instantiated classes is a feature used in this project."
 msgstr ""
+"W0232: Un-instantiated kelas adalah fitur yang digunakan dalam proyek ini."
 
 # 89cd012acff94b20a48c8dbec8040fcd
 #: ../../source/developer-docs/coding_standards.rst:63
+#, fuzzy
 msgid "W0403: Relative imports are OK for modules that live in the same dir"
 msgstr ""
+"W0403: impor relatif adalah OK untuk modul yang hidup di sumber yang sama"
 
 # 017043ab00b94167813db83c95f68a70
 #: ../../source/developer-docs/coding_standards.rst:64
+#, fuzzy
 msgid "W0511: Appearance of TODO and FIXME is not a sign of poor quality"
-msgstr ""
+msgstr "W0511: Penampilan TODO dan FIXME bukanlah tanda kualitas yang buruk"
 
 # 1070a0929912441082661e4d28e70ef1
 #: ../../source/developer-docs/coding_standards.rst:65
+#, fuzzy
 msgid "E1101: Disable check for missing attributes."
-msgstr ""
+msgstr "E1101:Menonaktifkan cek untuk atribut yang hilang."
 
 # 8e90d33db0fa4d969a85457ea9f0f93f
 #: ../../source/developer-docs/coding_standards.rst:66
+#, fuzzy
 msgid "E1103: This one does not understand numpy variables."
-msgstr ""
+msgstr "E1103: yang satu ini tidak mengerti variabel numpy."
 
 # 90270363f0884f95809eeaf76f28b2d6
 #: ../../source/developer-docs/coding_standards.rst:67
+#, fuzzy
 msgid "C0103: Allow mathematical variables such as x0 or A."
-msgstr ""
+msgstr "C0103: Mengijinkan variabel matematika seperti x0 atau A."
 
 # c8f85ba86bbc437b910dd6349f068b8c
 #: ../../source/developer-docs/coding_standards.rst:68
+#, fuzzy
 msgid "C0111: Allow missing docstrings in some cases"
-msgstr ""
+msgstr "C0111: Mengijinkan docstring yang hilang pada kasus yang sama"
 
 # 5cae356652a84c82a942bfe81cc6a7b9
 #: ../../source/developer-docs/coding_standards.rst:69
+#, fuzzy
 msgid "C0302: No restriction on the number of lines per module"
-msgstr ""
+msgstr "C0302: Tidak dibatasi pada nomor garis per modul"
 
 # d64af6bca2cb4536a51a8c8d30f86d6f
 #: ../../source/developer-docs/coding_standards.rst:71
+#, fuzzy
 msgid ""
-"It is of course possible to run all pylint checks on any part of the code if"
-" desired: E.g pylint safe/storage/raster.py"
+"It is of course possible to run all pylint checks on any part of the code if "
+"desired: E.g pylint safe/storage/raster.py"
 msgstr ""
+"Ini adalah kursus yang dipercaya untuk menjalankan semua cek pylint pada "
+"beberapa bagian dari kode apabila diinginkan:E.g pylint "
+"safe/storage/raster.py"
 
 # f24a07f8961e4e0aa89a2e012cce7272
 #: ../../source/developer-docs/coding_standards.rst:74
+#, fuzzy
 msgid ""
 "Each source file should include a standard header containing copyright, "
 "authorship and version metadata as shown in the exampled below."
 msgstr ""
+"Semua sumber file harus terisi standar header pada hak cipta, penulis dan "
+"versi metadata seperti yang ditunjukkan dalam contoh dibawah."
 
 # c958df340b284fe7a9eb92177e76ffd7
 #: ../../source/developer-docs/coding_standards.rst:77
+#, fuzzy
 msgid "**Example standard header**::"
-msgstr ""
+msgstr "**Contoh standar header**::"
 
 # 032c7c57d8d5466587cfc4d09a789714
 #: ../../source/developer-docs/coding_standards.rst:95
+#, fuzzy
 msgid ""
 "Please see :ref:`faq-revision-label` for details on how the revision tag is "
 "replaced with the SHA1 for the file when the release packages are made."
 msgstr ""
+"Tolong lihat :ref:`faq-revision-label` untuk detilnya bagaimana merevisi "
+"pengantian tag SHA1 untuk file dimana paket dibuat."
 
 # 32524875c5b54f3aba8719d8bcc881f4
 #: ../../source/developer-docs/coding_standards.rst:100
+#, fuzzy
 msgid "Doc strings"
-msgstr ""
+msgstr "String dokumen"
 
 # a07cb0c8f4a348be9eb999090e276cbc
 #: ../../source/developer-docs/coding_standards.rst:102
+#, fuzzy
 msgid ""
 "All code should be self documenting. We used the following style for "
 "documenting functions and class methods::"
 msgstr ""
+"semua kode harus terdokumentasi sendiri. Kita menggunakan petunjuk gaya "
+"untuk mendokumentasikan fungsi dan metode pengkelasan::"
 
 # bb2ff5c79ca8490287d09b0274e72796
 #: ../../source/developer-docs/coding_standards.rst:121
+#, fuzzy
 msgid ""
 "If you use a few lines of code in more than one place, refactor them into "
 "their own function."
 msgstr ""
+"Apabila anda menggunakan beberapa garis kode pada lebih dari satu tempat, "
+"refaktor itu ke dalam fungsi masing-masing."
 
 # 7ad24d4720b64cdda06b31c567cf9e02
 #: ../../source/developer-docs/coding_standards.rst:123
+#, fuzzy
 msgid ""
 "If you use a literal string or expression in more than one place, refactor "
 "it into a function or variable."
 msgstr ""
+"Apabila anda menggunakan string yang literal atau expresi pada lebih dari "
+"satu tempat, refaktor itu ke sebuah fungsi atau variabel."
 
 # 927208de4cd14ed4bdabdbcd53c30d19
 #: ../../source/developer-docs/coding_standards.rst:127
+#, fuzzy
 msgid ""
 "Various other sphinx markup elements may be used in the docstrings too. For "
-"more information see also: http://thomas-"
-"cokelaer.info/tutorials/sphinx/docstring_python.html"
+"more information see also: "
+"http://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html"
 msgstr ""
+"Berbagai elemen markup sphinx lainnya dapat digunakan dalam docstrings juga. "
+"Untuk informasi lebih lanjut lihat juga: "
+"http://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html"
 
 # f81f1d65b99b40918a456f400a897bde
 #: ../../source/developer-docs/coding_standards.rst:135
+#, fuzzy
 msgid "Human Interface Guidelines"
-msgstr ""
+msgstr "Pedoman Antarmuka Pengguna"
 
 # e3daaf2608bb42a58608077c8c2b1500
 #: ../../source/developer-docs/coding_standards.rst:137
+#, fuzzy
 msgid ""
-"For consistency of user experience, the user interfaces created in Risk in a"
-" Box should adhere to the QGIS Human Interface Guidelines (HIG) which are "
+"For consistency of user experience, the user interfaces created in Risk in a "
+"Box should adhere to the QGIS Human Interface Guidelines (HIG) which are "
 "listed here for your convenience:"
 msgstr ""
+"Untuk konsistensi pengalaman pengguna, antarmuka pengguna dibuat dalam "
+"Risiko didalam kotak harus mematuhi Pedoman Antarmuka QGIS Pengguna (HIG) "
+"yang tercantum di sini untuk kenyamanan Anda:"
 
 # 318bc45e9e6d494c9a0a58041a05a86e
 #: ../../source/developer-docs/coding_standards.rst:141
+#, fuzzy
 msgid ""
 "Group related elements using group boxes: Try to identify elements that can "
 "be grouped together and then use group boxes with a label to identify the "
 "topic of that group.  Avoid using group boxes with only a single widget / "
 "item inside."
 msgstr ""
+"Elemen kelompok yang bersangkutan dengan menggunakan kotak kelompok: Cobalah "
+"untuk mengidentifikasi unsur-unsur yang dapat dikelompokkan bersama-sama dan "
+"kemudian menggunakan kotak kelompok dengan label untuk mengidentifikasi "
+"topik grup tersebut. Hindari penggunaan kotak kelompok hanya dalam satu "
+"widget / item."
 
 # a544cc3c34ef45f89305077155ede083
 #: ../../source/developer-docs/coding_standards.rst:145
+#, fuzzy
 msgid ""
-"Capitalise first letter only in labels: Labels (and group box labels) should"
-" be written as a phrase with leading capital letter, and all remaing words "
+"Capitalise first letter only in labels: Labels (and group box labels) should "
+"be written as a phrase with leading capital letter, and all remaing words "
 "written with lower case first letters"
 msgstr ""
+"Kapitalisasi huruf pertama hanya dalam label: Label (dan kelompok label "
+"kotak) harus ditulis sebagai kalimat dengan huruf kapital terkemuka, dan "
+"semua kata-kata remaing ditulis dengan huruf kecil pertama"
 
 # ce0601b9bc854e22b9e020dfcbea4fd7
 #: ../../source/developer-docs/coding_standards.rst:148
@@ -336,8 +445,8 @@ msgstr ""
 # 0690645d4665402ebbe2e274ff4bc86b
 #: ../../source/developer-docs/coding_standards.rst:163
 msgid ""
-"Widget stacks should be avoided if at all possible. They cause problems with"
-" layouts and inexplicable (to the user) resizing of dialogs to accommodate "
+"Widget stacks should be avoided if at all possible. They cause problems with "
+"layouts and inexplicable (to the user) resizing of dialogs to accommodate "
 "widgets that are not visible."
 msgstr ""
 
@@ -376,8 +485,8 @@ msgstr ""
 # ac93a48250ec4d9898bc13da243a1cf3
 #: ../../source/developer-docs/coding_standards.rst:177
 msgid ""
-"Don't add options for the sake of having lots of options. Strive to keep the"
-" user interface minimalistic and use sensible defaults."
+"Don't add options for the sake of having lots of options. Strive to keep the "
+"user interface minimalistic and use sensible defaults."
 msgstr ""
 
 # 075dc8a32a0b4254a070595c086277dd
