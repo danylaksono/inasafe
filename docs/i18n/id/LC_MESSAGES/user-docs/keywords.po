@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012, QGIS project
 # This file is distributed under the same license as the QGIS Documentation Project package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,17 +10,19 @@ msgstr ""
 "POT-Creation-Date: 2013-03-07 10:27\n"
 "PO-Revision-Date: 2013-03-07 09:24+0000\n"
 "Last-Translator: timlinux <tim@linfiniti.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/inasafe/language/id/)\n"
+"Language-Team: Indonesian "
+"(http://www.transifex.com/projects/p/inasafe/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: id\n"
 
 # 49c6de2a4489461bbce733d445c911da
 #: ../../source/user-docs/keywords.rst:9
 msgid "Keywords System"
-msgstr ""
+msgstr "Sistem Keyword"
 
 # 89bae6babe414e42a2611a4b8b34a2a7
 #: ../../source/user-docs/keywords.rst:11
@@ -28,11 +30,13 @@ msgid ""
 "This document describes the purpose and usage of the |project_name| "
 "*keywords* system."
 msgstr ""
+"Dokumen ini mendeskripsikan tujuan dan kegunaan dari |nama_proyek| "
+"*keywords* sistem."
 
 # de020e41a4bb419e87508e775e5a09f5
 #: ../../source/user-docs/keywords.rst:15
 msgid "Purpose"
-msgstr ""
+msgstr "Tujuan"
 
 # 7698336b03bd49f2a191ac7842b16cbd
 #: ../../source/user-docs/keywords.rst:17
@@ -40,17 +44,24 @@ msgid ""
 "The keywords system is used by the :ref:`impact_functions` to determine the "
 "nature of the input layers that have been passed to them."
 msgstr ""
+"Sistem keyword digunakan oleh :ref:`impact_functions` untuk menentukan sifat "
+"layer masukan yang telah diberikan pada mereka."
 
 # 897e46ee46b74ccdb51e78c7b6a603e1
 #: ../../source/user-docs/keywords.rst:20
+#, fuzzy
 msgid ""
 "Each input GIS dataset used by |project_name| needs to have an accompanying "
 "keywords file. The purpose of the keywords file is to provide additional "
-"metadata needed by the impact functions. For example, the keywords file will"
-" indicate whether a given dataset should be treated as a *hazard* or an "
+"metadata needed by the impact functions. For example, the keywords file will "
+"indicate whether a given dataset should be treated as a *hazard* or an "
 "*impact* layer. It is also used to indicate the context of the layer (e.g. "
 "\"it's a *flood* layer, it's an *earthquake* layer)."
 msgstr ""
+"Tiap dataset masukan SIG yang digunakan oleh |project_name| perlu mempunyai "
+"file keyword yang menyertainya. Tujuan dari file keyword adalah untuk "
+"menyediakan tambahan metadata yang dibutuhkan oleh fungsi keterdampakan. "
+"Sebagai contoh, "
 
 # dd7a8f5f5ea6439ebcc471cfd3b7622e
 #: ../../source/user-docs/keywords.rst:27
@@ -85,8 +96,8 @@ msgid ""
 "Currently keywords are not validated by the library. This means if you for "
 "example misspell a keyword, use the wrong letter case (e.g. upper case "
 "instead of lower case) or provide the wrong keyword for the context (e.g. "
-"provide a subcategory of flood to an exposure category), the system will not"
-" be able to determine what to do with the file. For that reason you should "
+"provide a subcategory of flood to an exposure category), the system will not "
+"be able to determine what to do with the file. For that reason you should "
 "follow the guidelines below carefully to ensure you have entered your "
 "keywords correctly."
 msgstr ""
@@ -145,8 +156,7 @@ msgstr ""
 
 # f0d7d61a28164ae18f2b88417d789e38
 # e2ddfe0174c6424694f02571451147b1
-#: ../../source/user-docs/keywords.rst:69
-#: ../../source/user-docs/keywords.rst:70
+#: ../../source/user-docs/keywords.rst:69 ../../source/user-docs/keywords.rst:70
 msgid "category"
 msgstr ""
 
@@ -194,8 +204,7 @@ msgstr ""
 # d7e2ff8895564f5eac21f0000542a75f
 # 0efc17c3ec5b4477b36764ee44db8e63
 #: ../../source/user-docs/keywords.rst:89
-#: ../../source/user-docs/keywords.rst:90
-#: ../../source/user-docs/keywords.rst:91
+#: ../../source/user-docs/keywords.rst:90 ../../source/user-docs/keywords.rst:91
 msgid "subcategory"
 msgstr ""
 
@@ -308,8 +317,8 @@ msgstr ""
 # 41babd09fc8e4a0a968b93c08dd7106d
 #: ../../source/user-docs/keywords.rst:142
 msgid ""
-"In the case where the units are m (meters) or feet, the input dataset should"
-" be a raster layer where each cell in the raster represents a depth in the "
+"In the case where the units are m (meters) or feet, the input dataset should "
+"be a raster layer where each cell in the raster represents a depth in the "
 "units specified."
 msgstr ""
 
@@ -334,16 +343,15 @@ msgstr ""
 # ead09c7c0bbf404e876181cc82597e98
 #: ../../source/user-docs/keywords.rst:160
 msgid ""
-"In this case the dataset should be a raster layer where each cell represents"
-" the kilograms per meters squared of ash fall on that cell."
+"In this case the dataset should be a raster layer where each cell represents "
+"the kilograms per meters squared of ash fall on that cell."
 msgstr ""
 
 # 6434ef2a9f2c436da22807441fecac60
 #: ../../source/user-docs/keywords.rst:163
 msgid ""
-"'units' and 'datatype' (described below) should be considered to be mutually"
-" exclusive - i.e. they should not both be present in any given keywords "
-"file."
+"'units' and 'datatype' (described below) should be considered to be mutually "
+"exclusive - i.e. they should not both be present in any given keywords file."
 msgstr ""
 
 # 691428bb3a754b24b3c4846ad3de5d97
@@ -520,9 +528,9 @@ msgstr ""
 msgid ""
 "**Advanced mode**: In this mode several extra options are provided in "
 "addition to the minimal mode options. Unlike minimal mode, in advanced mode "
-"only basic validation is performed and the user is given more flexibility to"
-" manually define and remove key/value pairs. Three sections are provided for"
-" this:"
+"only basic validation is performed and the user is given more flexibility to "
+"manually define and remove key/value pairs. Three sections are provided for "
+"this:"
 msgstr ""
 
 # a8ad07176fbd4540838e2a8b32a00a1e
@@ -547,9 +555,9 @@ msgid ""
 "**Current keywords** - In this area a complete list of all the keywords for "
 "the dataset are displayed. The keywords list here is updated when any "
 "changes are made in both the simple and advanced mode editors. It is also "
-"possible in this area to manually remove unwanted keywords using the 'remove"
-" selected' button. Multiple keywords can be removed in a single operation by"
-" :kbd:`Control-clicking` on multiple keyword entries in the current keyword "
+"possible in this area to manually remove unwanted keywords using the 'remove "
+"selected' button. Multiple keywords can be removed in a single operation by "
+":kbd:`Control-clicking` on multiple keyword entries in the current keyword "
 "list and then clicking :guilabel:`Remove selected`"
 msgstr ""
 
@@ -624,9 +632,9 @@ msgstr ""
 msgid ""
 "You may wish to use a different location for the :file:`keywords.db` "
 "keywords database - you can configure this by using the InaSAFE options "
-"dialog. The options dialog can be launched by clicking on the InaSAFE plugin"
-" toolbar's options icon (as shown below) or by doing :menuselection:`Plugins"
-" --> InaSAFE --> InaSAFE Options`."
+"dialog. The options dialog can be launched by clicking on the InaSAFE plugin "
+"toolbar's options icon (as shown below) or by doing :menuselection:`Plugins "
+"--> InaSAFE --> InaSAFE Options`."
 msgstr ""
 
 # f2d81bde8ac64c8b8d511f3caa63b3b5
@@ -687,9 +695,9 @@ msgstr ""
 msgid ""
 "For certain resources (e.g. ArcInfo coverages, Spatialite databases) where "
 "the keywords cache is also used, you should take care to use a common mount "
-"point or network share to access the data if you wish to successfull hit the"
-" cache with the layer's URI. For example you could have all users mount your"
-" data to the same place. Under Unix like operating systems this could look "
+"point or network share to access the data if you wish to successfull hit the "
+"cache with the layer's URI. For example you could have all users mount your "
+"data to the same place. Under Unix like operating systems this could look "
 "something like this::"
 msgstr ""
 
