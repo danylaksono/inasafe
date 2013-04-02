@@ -22,7 +22,7 @@ msgstr ""
 # c0d11020affe4ae7b5fc2ce2ce219e1c
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardPopulationImpactFunction.rst:6
 msgid "Categorised Hazard Population Impact Function"
-msgstr "Pengkategorian Fungsi Keterdampakan Bahaya Populasi"
+msgstr "Pengkategorian Ancaman Populasi Pada Fungsi Keterdampakan "
 
 # 03efe9b5999e4353887f0daac999681f
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardPopulationImpactFunction.rst:9
@@ -32,7 +32,9 @@ msgstr "Pratinjau"
 # d57b689b9b07490aa33610e905f203d2
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardPopulationImpactFunction.rst:11
 msgid "**Unique Identifier**: Categorised Hazard Population Impact Function"
-msgstr "**Unique Identifier**: Pengkategorian Fungsi Bahaya Populasi"
+msgstr ""
+"**Unique Identifier**: Pengkategorian Ancaman Populasi Pada Fungsi "
+"Keterdampakan "
 
 # 60435704528c400398ae17c2305504e2
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardPopulationImpactFunction.rst:13

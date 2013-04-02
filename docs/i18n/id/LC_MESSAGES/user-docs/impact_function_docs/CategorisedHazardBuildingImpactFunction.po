@@ -22,7 +22,7 @@ msgstr ""
 # 6c5ab64146b142eda7666dc6fbae84ca
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardBuildingImpactFunction.rst:6
 msgid "Categorised Hazard Building Impact Function"
-msgstr "Pengkategorian Fungsi Keterdampakan Bangunan Gempabumi"
+msgstr "Pengkategorian Ancaman Fungsi Keterdampakan Bangunan "
 
 # 0808b29e20c144dd98aa0b7f9fbfeae1
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardBuildingImpactFunction.rst:9
@@ -33,7 +33,7 @@ msgstr "Tinjauan"
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardBuildingImpactFunction.rst:11
 msgid "**Unique Identifier**: Categorised Hazard Building Impact Function"
 msgstr ""
-"**Unique Identifier**: Pengkategorian Fungsi Keterdampakan Bangunan Gempabumi"
+"**Unique Identifier**: Pengkategorian Ancaman Fungsi Keterdampakan Bangunan "
 
 # e4e5b899943b49e68ca24c44189d3138
 #: ../../source/user-docs/impact_function_docs/CategorisedHazardBuildingImpactFunction.rst:13

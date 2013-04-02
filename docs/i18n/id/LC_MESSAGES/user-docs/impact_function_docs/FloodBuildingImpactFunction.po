@@ -22,7 +22,7 @@ msgstr ""
 # 73836be917b4496aa826147ea2814e47
 #: ../../source/user-docs/impact_function_docs/FloodBuildingImpactFunction.rst:6
 msgid "Flood Building Impact Function"
-msgstr "Fungsi Keterdampakan Bangunan Banjir"
+msgstr "Fungsi Keterdampakan Bangunan Akibat Banjir"
 
 # b76f56d0cbe640bab51ddbe8a2559919
 #: ../../source/user-docs/impact_function_docs/FloodBuildingImpactFunction.rst:9
@@ -47,7 +47,7 @@ msgstr "**Title**: Terdampak Banjir"
 # 911197660f524064b52cf7d052b0d0c8
 #: ../../source/user-docs/impact_function_docs/FloodBuildingImpactFunction.rst:17
 msgid "**Unique Identifier**: Flood Building Impact Function"
-msgstr "**Unique Identifier**: Fungsi Ketederdampakan Bangunan Banjir"
+msgstr "**Unique Identifier**: Fungsi Keterdampakan Bangunan Akibat Banjir"
 
 # 7318353c74f5429c9f7f2405e994dc5f
 #: ../../source/user-docs/impact_function_docs/FloodBuildingImpactFunction.rst:19
@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "**Permissible Hazard Input**: Sebuah layer raster yang masing-masing "
 "merepresentasikan kedalaman banjir ,atau sebuah layer vektor poligon yang "
-"masing-masing merepresentasikan sebuah area yang terbanjiri. Berikut adalah "
-"atribut yang yang dikenali (di) : Flooded (Benar atau Salah), FLOODPRONE "
+"masing-masing merepresentasikan sebuah area yang dibanjiri. Berikut adalah "
+"atribut yang yang dikenali (in order) : Flooded (True or False), FLOODPRONE "
 "(Yes or No) dan Affected (True or False)."
 
 # e09f9b7af8d145c9a140b3d59fa1c8e7

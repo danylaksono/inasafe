@@ -22,7 +22,7 @@ msgstr ""
 # 26687df152e9447190e67d41fa97c7f6
 #: ../../source/user-docs/impact_function_docs/EarthquakeBuildingImpactFunction.rst:6
 msgid "Earthquake Building Impact Function"
-msgstr "Fungsi Keterdampakan Bangunan Gempabumi"
+msgstr "Fungsi Keterdampakan Bangunan Akibat Gempabumi"
 
 # 77282e5b84264cc2bffc5b2b010fcefc
 #: ../../source/user-docs/impact_function_docs/EarthquakeBuildingImpactFunction.rst:9
@@ -32,10 +32,11 @@ msgstr "Tinjauan"
 # 1a1eccce4e724bc9b309653923afdfb0
 #: ../../source/user-docs/impact_function_docs/EarthquakeBuildingImpactFunction.rst:11
 msgid "**Unique Identifier**: Earthquake Building Impact Function"
-msgstr "**Unique Identifier**:Fungsi Keterdampakan Bangunan Gempabumi"
+msgstr "**Unique Identifier**: Fungsi Keterdampakan Bangunan Akibat Gempabumi"
 
 # 6339f393e794434baaec17577422be22
 #: ../../source/user-docs/impact_function_docs/EarthquakeBuildingImpactFunction.rst:13
+#, fuzzy
 msgid "**Title**: Be affected"
 msgstr "**Title**: Yang terdampak`"
 
