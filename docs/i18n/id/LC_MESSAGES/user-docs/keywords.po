@@ -398,7 +398,7 @@ msgstr ""
 # 691428bb3a754b24b3c4846ad3de5d97
 #: ../../source/user-docs/keywords.rst:168
 msgid "Datatype"
-msgstr ""
+msgstr "Tipe data"
 
 # e6b3afc6187e4415bbee6e05ccbb60e9
 #: ../../source/user-docs/keywords.rst:170
@@ -406,11 +406,13 @@ msgid ""
 "The datatype keyword is specific to exposure layers and represents the "
 "datatype of people, infrastructure etc. within a given area."
 msgstr ""
+"Keyword tipe data spesifik untuk layer eksposur dan merepresentasikan tipe "
+"data dari orang, infrastruktur, dan lain-lain, dalam area yang diberikan."
 
 # dbcd61b2a9b04af7bcebfde7a24f2a77
 #: ../../source/user-docs/keywords.rst:173
 msgid "Valid densities for different subcategories"
-msgstr ""
+msgstr "Kepadatan yang valid dengan subkategori yang berbeda"
 
 # ee2df791c8744d6c957c3b1eebd65c24
 # 1b3e2a20f08740d18b905cd0b92b748f
@@ -425,42 +427,42 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:184
 #: ../../source/user-docs/keywords.rst:185
 msgid "datatype"
-msgstr ""
+msgstr "tipe data"
 
 # 1206c205a17742d893faaf763b2f9b15
 #: ../../source/user-docs/keywords.rst:180
 msgid "count"
-msgstr ""
+msgstr "hitung"
 
 # 0b1158f8479c4c34a0fe9a073daa3ef2
 #: ../../source/user-docs/keywords.rst:181
 msgid "density"
-msgstr ""
+msgstr "kepadatan"
 
 # fefc49caf61f4a77ad374719b7104f89
 #: ../../source/user-docs/keywords.rst:182
 msgid "osm"
-msgstr ""
+msgstr "osm"
 
 # 611b89a37b1b4b8f8f75983d96a09d88
 #: ../../source/user-docs/keywords.rst:183
 msgid "sigab"
-msgstr ""
+msgstr "sigab"
 
 # 5fcbfe2fc41141e2b04e8fce2a378369
 #: ../../source/user-docs/keywords.rst:184
 msgid "other"
-msgstr ""
+msgstr "lain"
 
 # df1aa5ffea3c4baf82f4330fab8d3727
 #: ../../source/user-docs/keywords.rst:185
 msgid "not used for roads"
-msgstr ""
+msgstr "tidak digunakan untuk jalan"
 
 # 6fc3283c015b4422aefce2096ca20334
 #: ../../source/user-docs/keywords.rst:189
 msgid "Assumptions"
-msgstr ""
+msgstr "anggapan"
 
 # d6af52a58a1045e8928085dcbe89e9e7
 #: ../../source/user-docs/keywords.rst:191
@@ -468,12 +470,14 @@ msgid ""
 "The following assumptions are made about keywords, which may or may not be "
 "programmatically enforced by the InaSAFE library and GUI:"
 msgstr ""
+"Anggapan yang mengikuti dibuat tentang keyword, yang dapat atau tidak dapat "
+"diprogram secara paksa oleh pustaka InaSAFE dan GUI:"
 
 # 4b439ffd6d424c27bb6a128d3c9e9b86
 #: ../../source/user-docs/keywords.rst:194
 msgid ""
 "There should only be **one keyword for a given key** in the keywords file"
-msgstr ""
+msgstr "Seharusnya hanya **one keyword for a given key** dalam file keyword"
 
 # bd11bb7dff8d43b795a03460ce7c6088
 #: ../../source/user-docs/keywords.rst:195
