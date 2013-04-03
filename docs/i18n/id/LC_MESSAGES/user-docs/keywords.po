@@ -49,7 +49,6 @@ msgstr ""
 
 # 897e46ee46b74ccdb51e78c7b6a603e1
 #: ../../source/user-docs/keywords.rst:20
-#, fuzzy
 msgid ""
 "Each input GIS dataset used by |project_name| needs to have an accompanying "
 "keywords file. The purpose of the keywords file is to provide additional "
@@ -61,7 +60,10 @@ msgstr ""
 "Tiap dataset masukan SIG yang digunakan oleh |project_name| perlu mempunyai "
 "file keyword yang menyertainya. Tujuan dari file keyword adalah untuk "
 "menyediakan tambahan metadata yang dibutuhkan oleh fungsi keterdampakan. "
-"Sebagai contoh, "
+"Sebagai contoh, file keyword akan menandakan apakah suatu set data "
+"diperlakukan sebagai layer *hazard* atau *impact* . File keyword juga "
+"digunakan untuk mengindikasikan isi dari sebuah layer (misalnya, . apakah ia "
+"layer *flood* atau *earthquake*)."
 
 # dd7a8f5f5ea6439ebcc471cfd3b7622e
 #: ../../source/user-docs/keywords.rst:27
@@ -70,17 +72,22 @@ msgid ""
 "same base name of the GIS datasource it accompanies. For example a flood "
 "dataset saved as::"
 msgstr ""
+"Dengan ketentuan dan dugaan, file keyword harus diberi nama dengan nama yang "
+"sama dengan nama dasar dari sumber data SIG yang menyertainya. sebagai "
+"contoh adalah dataset banjir disimpan sebagai::"
 
 # 52ea912f6d2043ebac0e1f5d57a776b0
 #: ../../source/user-docs/keywords.rst:33
 msgid "Would need to have an accompanying keywords file saved as::"
-msgstr ""
+msgstr "Perlu memiliki pendamping file keyword yang disimpan sebagai::"
 
 # a5145311b60146059cff205f7e031907
 #: ../../source/user-docs/keywords.rst:37
 msgid ""
 "We recommend to **avoid using spaces** in your file names and file paths!"
 msgstr ""
+"Kami merekomendasikan untuk **avoid using spaces** pada nama file dan pola "
+"file!"
 
 # f101a1b799a044d9b39798306393782a
 #: ../../source/user-docs/keywords.rst:40
@@ -89,6 +96,9 @@ msgid ""
 "purpose of this document is to describe the keywords editor and to provide "
 "guidelines as to the use of keywords."
 msgstr ""
+"Plugin QGIS yaitu |project_name| menyediakan editor untuk keyword ini. "
+"Tujuan dari dikumen ini adalah untuk mendeskripsikan editor keyword dan "
+"untuk menyediakan panduan penggunaan keyword."
 
 # f852c08217d44f54a246c1c04168a141
 #: ../../source/user-docs/keywords.rst:44
@@ -101,21 +111,29 @@ msgid ""
 "follow the guidelines below carefully to ensure you have entered your "
 "keywords correctly."
 msgstr ""
+"Keyword yang sudah ada tidak divalidasi oleh pustaka. Ini berarti jika kamu "
+"sebagai contoh salah mengeja, menggunakan huruf yang salah kasusnya (contoh "
+"huruf besar alih-alih huruf kecil) atau memberikan keyword yang salah untuk "
+"konteks (contoh memberikan subkategori banjir ke kategori keterdampakan), "
+"sistem tidak akan bisa untuk menentukan apa yang harus dilakukan dengan file "
+"tersebut. Untuk alasan tersebut, kamu harus mengikuti panduan yang "
+"mengikutinya secara hari-hati untuk memastikan kamu telah memasukkan keyword "
+"dengan benar."
 
 # b9489df28c0749cfab18342a38f10aab
 #: ../../source/user-docs/keywords.rst:54
 msgid "Guidelines"
-msgstr ""
+msgstr "Panduan"
 
 # ae7a2c61c1b147ff9ddbd074ede01fec
 #: ../../source/user-docs/keywords.rst:56
 msgid "In this section we lay out the guidelines for keyword usage."
-msgstr ""
+msgstr "Pada bab ini kami menguraikan panduan untuk penggunaan keyword."
 
 # 93c0a8f221d9428699378ee1b5462251
 #: ../../source/user-docs/keywords.rst:59
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 # 83d985717fd74445b19b4b1216df4249
 #: ../../source/user-docs/keywords.rst:61
@@ -123,6 +141,8 @@ msgid ""
 "Every dataset should have a category assigned to it. Category should be "
 "written in lower case."
 msgstr ""
+"Setiap dataset harus mempunyai kategori yang diberikan kepadanya. Kategori "
+"karus ditulis dalam huruf kecil."
 
 # f6ce2aaf706744248dd5221d4dea0af4
 # 160b04d000db42448123ed48161c5a05
@@ -137,7 +157,7 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:155
 #: ../../source/user-docs/keywords.rst:178
 msgid "Key"
-msgstr ""
+msgstr "Kunci"
 
 # 2cc2dca5118a4944a437c44e873547e6
 # dd12d91de67a40c897206e5002618efd
@@ -152,18 +172,18 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:155
 #: ../../source/user-docs/keywords.rst:178
 msgid "Allowed Values"
-msgstr ""
+msgstr "Nilai yang diijinkan"
 
 # f0d7d61a28164ae18f2b88417d789e38
 # e2ddfe0174c6424694f02571451147b1
 #: ../../source/user-docs/keywords.rst:69 ../../source/user-docs/keywords.rst:70
 msgid "category"
-msgstr ""
+msgstr "kategori"
 
 # 2ab1c872593440e8b4d62bce09cf39b3
 #: ../../source/user-docs/keywords.rst:69
 msgid "hazard"
-msgstr ""
+msgstr "bencana"
 
 # 6aba39a6bf14428eab5df63f38cd886d
 # c08e22e08825425595c8775b1fe00ea6
@@ -174,31 +194,31 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:104
 #: ../../source/user-docs/keywords.rst:105
 msgid "exposure"
-msgstr ""
+msgstr "keterdampakan"
 
 # fcf0d82c3746452ab8d07566800f7907
 # 19ca26a320d9429691b7541c96de816e
 #: ../../source/user-docs/keywords.rst:73
 #: ../../source/user-docs/keywords.rst:108
 msgid "Example keywords file entry::"
-msgstr ""
+msgstr "Contoh masukan file keyword::"
 
 # eeca55c93ecd4c849eb3dbbd80282dd1
 # 9b55aea665874e628cb40035702238bf
 #: ../../source/user-docs/keywords.rst:78
 #: ../../source/user-docs/keywords.rst:178
 msgid "Subcategory"
-msgstr ""
+msgstr "Subkategori"
 
 # db9d480a747545fc97bc91b3c24929fe
 #: ../../source/user-docs/keywords.rst:80
 msgid "The selection of a subcategory value is dependent on the category:"
-msgstr ""
+msgstr "Pemilihan dari nilai subkategori tergantung pada kategori:"
 
 # bec7ae78c3fe4e37ae75d08853add6b3
 #: ../../source/user-docs/keywords.rst:82
 msgid "Valid subcategories for category 'hazard':"
-msgstr ""
+msgstr "Subkategori yang valid untuk kategori bencana:"
 
 # 1976e98ecec6493fb3fe41d8f580ffd9
 # d7e2ff8895564f5eac21f0000542a75f
@@ -206,32 +226,32 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:89
 #: ../../source/user-docs/keywords.rst:90 ../../source/user-docs/keywords.rst:91
 msgid "subcategory"
-msgstr ""
+msgstr "subkategori"
 
 # f5220dc279974099aa627669cef37ec7
 #: ../../source/user-docs/keywords.rst:89
 msgid "tsunami"
-msgstr ""
+msgstr "tsunami"
 
 # 0ef1c2f223fa4685bc1e2e4b6a0916ff
 #: ../../source/user-docs/keywords.rst:90
 msgid "flood"
-msgstr ""
+msgstr "banjir"
 
 # 5f9afe7ceeef459bb16c27382c8dea4b
 #: ../../source/user-docs/keywords.rst:91
 msgid "tephra"
-msgstr ""
+msgstr "tephra"
 
 # 9ac1d645863f4347b923bf04537b310e
 #: ../../source/user-docs/keywords.rst:94
 msgid "Where tephra is volcanic ashfall."
-msgstr ""
+msgstr "Dimana tephra adalah debu vulkanik yang berguguran."
 
 # 373a87e0ab084a1c870443ea53115e69
 #: ../../source/user-docs/keywords.rst:96
 msgid "Valid subcategories for category 'exposure':"
-msgstr ""
+msgstr "Subkategori yang valid untuk kategori keterdampakan:"
 
 # 862599045c1944efaf38f325b78fb581
 # 787941d624f145d68a97ee391a5a186f
@@ -240,7 +260,7 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:180
 #: ../../source/user-docs/keywords.rst:181
 msgid "population"
-msgstr ""
+msgstr "pupulasi"
 
 # 5810b2b451d948819de083cbe5483153
 # 458d32475ee748e2b93cadaf9cf5d25a
@@ -251,19 +271,19 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:183
 #: ../../source/user-docs/keywords.rst:184
 msgid "building"
-msgstr ""
+msgstr "bangunan"
 
 # f8465fc31b7a4130b98ca0159e3b22e0
 # 765b974b06fe4f81b3dc9ae293d5071b
 #: ../../source/user-docs/keywords.rst:105
 #: ../../source/user-docs/keywords.rst:185
 msgid "roads"
-msgstr ""
+msgstr "jalan"
 
 # c4db636c61fe4504a3586b533be7fc8b
 #: ../../source/user-docs/keywords.rst:114
 msgid "Units"
-msgstr ""
+msgstr "Satuan"
 
 # a4ce55ae13f14f4b85b08009fa2154b8
 #: ../../source/user-docs/keywords.rst:116
@@ -273,6 +293,10 @@ msgid ""
 "entity (a grid cell or a vector feature) in the hazard layer. Example "
 "keywords file entry::"
 msgstr ""
+"Satuan keyword hanya valid dalam konteks dari layer bencana, dan digunakan  "
+"untuk mengindikasikan metric atau unit imperial yang direpresentasikan "
+"dengan tiap entiti data. ( sel grid atau fitur vektor) dalam layek bencana. "
+"Contoh masukan file keyword::"
 
 # c7852e67f7cb495fb2358db92568acc5
 #: ../../source/user-docs/keywords.rst:125
@@ -282,6 +306,10 @@ msgid ""
 "'flood' . The following are the allowed units which are dependent on the "
 "subcategory defined."
 msgstr ""
+"Pada kasus di atas ada konstrain lunak untuk menggunakan nilai untuk satuan "
+"m, feet, atau wet/dry seperti didefinisikan oleh tabel dibawah karena "
+"subkategorinya adalah banjir. Berikut adalah satuan yang diperbolehkan yang "
+"bergantung pada subkategori yang didefinisikan."
 
 # 7b64ee7cf46e4643b6023b6746e054b3
 #: ../../source/user-docs/keywords.rst:130
