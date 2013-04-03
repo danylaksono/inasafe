@@ -487,6 +487,10 @@ msgid ""
 "**'hazard'** will remove the **'datatype'** key/value pair, and selecting "
 "**'exposure'** will remove the **'units'** key value pair."
 msgstr ""
+"Mengubah dari bencana ke keterdampakan akan menghapus bagian dari GUI karena "
+"pada umumnya kebanyakan keyword tergantung pada kategori. Khususnya, memilih "
+"**'hazard'** akan menghapus **'datatype'** pasangan key/value, dan memilih "
+"**'exposure'** akan menghapus **'units'** pasangan key value."
 
 # b5030b75eb864e2fb80742e6e0156c3a
 #: ../../source/user-docs/keywords.rst:199
@@ -494,6 +498,8 @@ msgid ""
 "Keywords for **category** are **enforced** to be one of 'hazard' or "
 "'exposure' by the GUI."
 msgstr ""
+"Keyword untuk **category* adalah **enforced** untuk menjadi salah satu "
+"'bencana' atau 'keterdampakan' oleh GUI."
 
 # 54d470258f7a4f908d8cb575cdde1dd8
 #: ../../source/user-docs/keywords.rst:201
@@ -502,6 +508,9 @@ msgid ""
 "exception of 'Title' whose value may contain both spaces and mixed case "
 "letters."
 msgstr ""
+"Semua keyword harus dalam **lower case**, **without spaces** dengan "
+"pengecualian dari 'Judul' yang nilainya mungkin terdiri dari kedua spasi dan "
+"huruf yang bercampur."
 
 # 532285e06f0e48afac54e344d2a994ad
 #: ../../source/user-docs/keywords.rst:204
@@ -509,6 +518,8 @@ msgid ""
 "Values for keywords should generally be lower case, with the exception of "
 "**datatype values may be in upper case** (e.g. MMI)"
 msgstr ""
+"Nilai untuk keyword secara umum harus huruf kecil, dengan pengecualian dari "
+"**datatype values may be in upper case** (contoh MMI)"
 
 # a709f0cb1b714f5b87ef8293d1c0e06a
 #: ../../source/user-docs/keywords.rst:206
@@ -516,6 +527,8 @@ msgid ""
 "Keys and values should **not contain colons**. In the keyword editor, any "
 "colons will be replaced with a full stop character."
 msgstr ""
+"Kunci dan nilai harus **not contain colons**. Dalam editor keyword, semua "
+"titik dua akan digantikan dengan tanda titik."
 
 # 28a1bf2164b446f1b15b9e8691d7b431
 #: ../../source/user-docs/keywords.rst:208
@@ -523,23 +536,27 @@ msgid ""
 "All other Keywords and values that do not fit the above domain lists may be "
 "used but they may produce undesired results."
 msgstr ""
+"Semua Keyword dan nilai lainnya yang tidak sesuai dengan daftar domain di "
+"atas boleh digunakan tapi mungkin menghasilkan hasil yang tidak diinginkan."
 
 # 3968dd48632e4892acd21e57e3701ea9
 #: ../../source/user-docs/keywords.rst:212
 msgid "The keywords editor graphical user interface"
-msgstr ""
+msgstr "Editor keyword grafis antarmuka pengguna"
 
 # c5a54fee41564c5c811aafb08a211064
 #: ../../source/user-docs/keywords.rst:214
 msgid ""
 "The graphical user interface for keyword editing is divided into two parts:"
 msgstr ""
+"Grafis antarmuka pengguna untuk edit keyword dibedakan menjadi dua bagian:"
 
 # c44bbc2e126f4d929d5dd227cdea69ee
 #: ../../source/user-docs/keywords.rst:216
 msgid ""
 "1.) **Minimal mode**: In this mode, only following options are provided:"
 msgstr ""
+"1.) **Minimal mode**: dalam mode ini, hanya pilihan berikut yang tersedia:"
 
 # dd2721b987a74be9b47117674c91a687
 #: ../../source/user-docs/keywords.rst:218
@@ -547,11 +564,13 @@ msgid ""
 "**Title** - a 'friendly' name for the dataset which will be displayed in "
 "reports, the user interface and so on."
 msgstr ""
+"**Title** - a nama yang 'bersahabat' untuk dataset yang akan ditampilkan "
+"dalam laporan, antar muka pengguna dan seterusnya."
 
 # 6efc8fbabb49497194a58bf1c90deeb0
 #: ../../source/user-docs/keywords.rst:220
 msgid "**Category** - A mandatory choice between 'hazard' and 'exposure'."
-msgstr ""
+msgstr "**Category** - pilihan wajib diantara 'bencana' dan 'keterdampakan'."
 
 # c329196dd427473f918374dc22784e25
 #: ../../source/user-docs/keywords.rst:221
@@ -562,6 +581,11 @@ msgid ""
 "square brackets after the subcategory name e.g. :samp:`flood [m]` is used "
 "for subcategory 'flood', units 'm'."
 msgstr ""
+"**Subcategory** - Campuran subkategori/satuan daftar pilihan (dalam kasus "
+"bencana) atau campuran subkategori/tipe data ( dalam kasus keterdampakan). "
+"Dalam kasus ini, karakteristik yang kedua ( satuan atau tipe data) "
+"ditunjukkan dalam tanda kurung kotak setelah nama subkategori contoh :samp: "
+"flood [m] digunakan untuk subkategori banjir, satuan 'm'."
 
 # 123416a835a74c1aa219621abbbd4b54
 #: ../../source/user-docs/keywords.rst:227
