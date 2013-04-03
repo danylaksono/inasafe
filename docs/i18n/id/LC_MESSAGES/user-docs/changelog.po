@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012, QGIS project
 # This file is distributed under the same license as the QGIS Documentation Project package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,22 +10,24 @@ msgstr ""
 "POT-Creation-Date: 2013-03-07 10:27\n"
 "PO-Revision-Date: 2013-03-07 09:25+0000\n"
 "Last-Translator: timlinux <tim@linfiniti.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/inasafe/language/id/)\n"
+"Language-Team: Indonesian "
+"(http://www.transifex.com/projects/p/inasafe/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: id\n"
 
 # dfdd9ec4d4ab4a7a9980a2d7d3512b0e
 #: ../../source/user-docs/changelog.rst:8
 msgid "Whats new?"
-msgstr ""
+msgstr "Apa yang baru?"
 
 # 5b09dc06b58845e0a62fbbcb76b36c12
 #: ../../source/user-docs/changelog.rst:11
 msgid "Changelog for version 1.1.0"
-msgstr ""
+msgstr "Changelog untuk versi 1.1.0"
 
 # b650394c52b64bfa9ef301b483cd9381
 #: ../../source/user-docs/changelog.rst:13
@@ -33,11 +35,16 @@ msgid ""
 "Flood assessment using polygons now generates evacuation totals based on "
 "percent of affected people (defaults to 1%)."
 msgstr ""
+"Penilaian banjir dengan menggunakan poligon sekarang mampu menghasilkan "
+"jumlah total evakuasi berdasarkan persentase orang yang terkena dampak "
+"(defaultnya 1%)"
 
 # 9f2d4183fa2645e2aecc8d9056cd00e2
 #: ../../source/user-docs/changelog.rst:15
 msgid "Improvements to error handling with more informative messages to user."
 msgstr ""
+"Perbaikan kesalahan ditangani dengan pesan-pesan yang lebih informatif bagi "
+"pengguna."
 
 # b9810b9ed1064e8a96c2c42183d8d32c
 #: ../../source/user-docs/changelog.rst:16
@@ -45,6 +52,9 @@ msgid ""
 "Memory requirements prediction to try to warn a user when they might not "
 "have enough RAM. See https://github.com/AIFDR/inasafe/issues/476."
 msgstr ""
+"Prediksi persyaratan memori untuk mencoba memperingati pengguna ketika "
+"mereka mungkin tidak memiliki cukup RAM. Lihat "
+"https://github.com/AIFDR/inasafe/issues/476."
 
 # a4d2ff6dd4bc4271a89ca3db1ab91a14
 #: ../../source/user-docs/changelog.rst:18
@@ -52,6 +62,9 @@ msgid ""
 "Remote logging support. This **opt in** feature lets you submit useful "
 "diagnostic information to our fault logger at http://sentry.linfiniti.com."
 msgstr ""
+"Lebih jauh mengenai dukungan logging. **opt in ** fitur ini  memungkinkan "
+"Anda mengirimkan perkiraan  informasi yang berguna untuk kesalahan looger "
+"kita di http://sentry.linfiniti.com."
 
 # 17356ef8366e41cfbe0e679e2d774ddd
 #: ../../source/user-docs/changelog.rst:20
@@ -59,12 +72,16 @@ msgid ""
 "Support for automatic creation of packages in a test repository for early "
 "adopters to test with."
 msgstr ""
+"Dukungan untuk pembuatan paket secara otomatis dalam uji repositori untuk "
+"pengadopsi awal untuk menguji dengan."
 
 # 33f8639f34aa481aa7d0e2f8505c539f
 #: ../../source/user-docs/changelog.rst:22
 msgid ""
 "Fix for 2D geometries - closes https://github.com/AIFDR/inasafe/issues/471"
 msgstr ""
+"Fix untuk geometri 2d penyelesaian isu di  "
+"https://github.com/AIFDR/inasafe/issues/471"
 
 # 1058070e6b074cd7995b64bfee4d641e
 #: ../../source/user-docs/changelog.rst:23
@@ -72,51 +89,59 @@ msgid ""
 "Default dock panel to right of QGIS. Closes "
 "https://github.com/AIFDR/inasafe/issues/326"
 msgstr ""
+"Default doct untuk QGIS yang benar. Penyelesaian isunya di "
+"https://github.com/AIFDR/inasafe/issues/326"
 
 # 39ca75accd144f9cb9de6ad2ca25bc7d
 #: ../../source/user-docs/changelog.rst:25
 msgid "Fix https://github.com/AIFDR/inasafe/issues/358"
-msgstr ""
+msgstr "Perbaikan https://github.com/AIFDR/inasafe/issues/358"
 
 # 3d5c6c1702514aacafd4df761d826806
 #: ../../source/user-docs/changelog.rst:26
 msgid "Many small 'under the hood' improvements."
-msgstr ""
+msgstr "Beberapa peningkatan peningkatan kecil."
 
 # 741bcab6037b45d19cebe8aa10ce57f3
 #: ../../source/user-docs/changelog.rst:27
 msgid ""
-"Realtime quake mapping support. This is available in source tree only and is"
-" a server side installable application. Indonesia specific."
+"Realtime quake mapping support. This is available in source tree only and is "
+"a server side installable application. Indonesia specific."
 msgstr ""
+"Dukungan untuk pemetaan dampak gempa secara realtime. Dapat diakses hanya "
+"melalui source tree saja dan merupakan instalasi server side. Khusus untuk "
+"wilayah Indonesia."
 
 # f0a504d3cc184d0191ae23e5637c6441
 #: ../../source/user-docs/changelog.rst:29
 msgid ""
 "Realtime flood mapping support. This is available in source tree only and "
-"provides an experimental implementation for production of floodmaps. Jakarta"
-" specific."
+"provides an experimental implementation for production of floodmaps. Jakarta "
+"specific."
 msgstr ""
+"Dukungan untuk pemetaan banjir secara realtime. Dapat diakses hanya melalui "
+"source tree dan menyediakan implementasi eksperimental untuk penyusunan peta "
+"bahaya banjir. Khusus untuk daerah Jakarta."
 
 # a5bc59c9079e41c38c705f8d5fa61d00
 #: ../../source/user-docs/changelog.rst:34
 msgid "Changelog for version 1.0.1"
-msgstr ""
+msgstr "Changelog untuk versi 1.0.1"
 
 # 126431c4620d40aaae90284949bd52b3
 #: ../../source/user-docs/changelog.rst:36
 msgid "Fix https://github.com/AIFDR/inasafe/issues/374"
-msgstr ""
+msgstr "Fix https://github.com/AIFDR/inasafe/issues/374"
 
 # 4fda682ce32f452089891d2c93844dac
 #: ../../source/user-docs/changelog.rst:37
 msgid "Fix https://github.com/AIFDR/inasafe/issues/375"
-msgstr ""
+msgstr "Fix https://github.com/AIFDR/inasafe/issues/375"
 
 # 94590cd52a4b436e9768d121a4c7de40
 #: ../../source/user-docs/changelog.rst:40
 msgid "Changelog for version 1.0.0"
-msgstr ""
+msgstr "Changelog untuk version 1.0.0"
 
 # 80e8ab15511e4fafbf5eac549be7a23c
 #: ../../source/user-docs/changelog.rst:42
@@ -124,100 +149,105 @@ msgid ""
 "Added post processor infrastructure including gender and age specific "
 "indicators"
 msgstr ""
+"Tambahan post processor untuk infrastruktur, termasuk indikator spesifik "
+"untuk gender dan usia"
 
 # 0b99a7ec929a4949a136b5ef70b14dca
 #: ../../source/user-docs/changelog.rst:43
 msgid "Added data source attribution"
-msgstr ""
+msgstr "Tambahan attribusi sumber data"
 
 # 6bcb18821d3946279e6a43865dfaf748
 #: ../../source/user-docs/changelog.rst:44
 msgid "Various GUI updates"
-msgstr ""
+msgstr "Berbagai update GUI"
 
 # afea4111e3c745a0b48d07210ebb143b
 #: ../../source/user-docs/changelog.rst:45
 msgid "Added use of transparency in generated maps"
-msgstr ""
+msgstr "Menambahkan penggunaan transparansi pada peta yang dihasilkan"
 
 # 08e813aa0ec54418974deb30ba75555a
 #: ../../source/user-docs/changelog.rst:46
 msgid "Added an earthquake impact function"
-msgstr ""
+msgstr "Menambahakan fungsi dampak gempa"
 
 # 79c234b68a2a4d6c9b74f34583efda67
 #: ../../source/user-docs/changelog.rst:47
 msgid "Documentation updates"
-msgstr ""
+msgstr "Update dokumentasi"
 
 # f316e1c9c01a43b59c25fb8fe2d752ce
 #: ../../source/user-docs/changelog.rst:48
 msgid "Many bugfixes and architectural improvements"
-msgstr ""
+msgstr "Berbagai penyelesaian bug dan peningkatan arsitektural"
 
 # 5bbbc49affb445658ca319d14253bae9
 #: ../../source/user-docs/changelog.rst:49
 msgid "Better internationalisation support"
-msgstr ""
+msgstr "Dukungan internasionalisasi yang lebih baik"
 
 # 79f06e84e2994ee2b8777f668633d0cb
 #: ../../source/user-docs/changelog.rst:52
 msgid "Changelog for version 0.5.2"
-msgstr ""
+msgstr "Changelog untuk version 0.5.2"
 
 # 99c5afab20ef414c8ce412aa0803b661
 #: ../../source/user-docs/changelog.rst:54
 msgid ""
 "This is a bugfix update to address some minor translation issues in the "
 "InaSAFE package."
-msgstr ""
+msgstr "Update bugfix untuk beberapa masalah penerjemahan di paket InaSAFE."
 
 # ecc4413a376241a89b30027a0228b33a
 #: ../../source/user-docs/changelog.rst:58
 msgid "Changelog for version 0.5.1"
-msgstr ""
+msgstr "Changelog untuk version 0.5.1"
 
 # e816acf25f214ab19f8298bc95ca05c8
 #: ../../source/user-docs/changelog.rst:60
 msgid "This is a bugfix update to reduce the size of the InaSAFE package."
-msgstr ""
+msgstr "Update bugfis untuk mengurangi ukuran paket dari InaSAFE."
 
 # 8cf883442fce4d47802525ab8fb3fd14
 #: ../../source/user-docs/changelog.rst:63
 msgid "Changelog for version 0.5.0"
-msgstr ""
+msgstr "Changelog untuk version 0.5.0"
 
 # b7761ba7b2e646b88d6897748ce6c206
 #: ../../source/user-docs/changelog.rst:65
 msgid "Better documentation. See http://inasafe.org/contents.html"
-msgstr ""
+msgstr "Dokumentasi yang lebih baik. Lihat http://inasafe.org/contents.html"
 
 # ebf37b2292b4410bbb064cd1455cc224
 #: ../../source/user-docs/changelog.rst:66
 msgid "Time stamp and other metadata added to generated map PDF."
-msgstr ""
+msgstr "Timestamp dan metadata lain ditambahkan ke PDF peta hasil analisis."
 
 # 62edeae1cf984bdfb0b0a49dd873a61e
 #: ../../source/user-docs/changelog.rst:67
 msgid "Initial support for parameterisation of impact functions."
-msgstr ""
+msgstr "Dukungan awal untuk pembuatan parameter fungsi dampak."
 
 # 63d5349488da4ff29ab03fb245c3f506
 #: ../../source/user-docs/changelog.rst:68
 msgid ""
-"Updated logging infrastructure including support for logging to the QGIS log"
-" panel."
+"Updated logging infrastructure including support for logging to the QGIS log "
+"panel."
 msgstr ""
+"Update logging infrastructure termasuk dukungan untuk logging ke QGIS log "
+"panel."
 
 # 1c15e3734c7d491787adc4f385a6d3c0
 #: ../../source/user-docs/changelog.rst:70
 msgid "Fixed missing InaSAFE icon in QGIS plugin manager."
 msgstr ""
+"Fix untuk menyelesaikan icon InaSAFE yang hilang di QGIS plugin manager."
 
 # 89fc40cdea5a4dea8bd350edab305668
 #: ../../source/user-docs/changelog.rst:71
 msgid "Fixes for help system under windows."
-msgstr ""
+msgstr "Fix untuk help pada system berbasis windows."
 
 # d48eb2ac4b7f4dd8b2b2d9dad69e58f0
 #: ../../source/user-docs/changelog.rst:72
@@ -225,6 +255,8 @@ msgid ""
 "Multi-page support for generated report PDF (which is now created as a "
 "separate document)."
 msgstr ""
+"Dukungan multi-halaman untuk PDF yang dihasilkan (sekarang dibuat menjadi "
+"dokumen terpisah)."
 
 # 0f67a0dfb7b342bd9b6d93911cb68409
 #: ../../source/user-docs/changelog.rst:74
@@ -232,14 +264,19 @@ msgid ""
 "Ability to combine polygon hazard  (such as flood prone areas) with "
 "population density."
 msgstr ""
+"Kemampuan untuk mengkombinasikan data hazard polygon (seperti area rawan "
+"banjir) dengan densitas populasi."
 
 # abcffbb64c014eb6b02b735168908f22
 #: ../../source/user-docs/changelog.rst:76
 msgid ""
-"Option to use entire intersection of hazard and exposure instead of clipping"
-" to the somewhat arbitrary viewport (the training revealed that this was a "
+"Option to use entire intersection of hazard and exposure instead of clipping "
+"to the somewhat arbitrary viewport (the training revealed that this was a "
 "bit confusing)"
 msgstr ""
+"Opsi untuk menggunakan seluruh perpotongan data hazard dan exposure "
+"dibandingkan melakukan clipping pada sebagain viewport yang kurang jelas "
+"(selama pelatihan ditemukan bahwa ini sedikit memusingkan)"
 
 # 1b12bba8c10e4f1d997ca2539d106c55
 #: ../../source/user-docs/changelog.rst:79
@@ -247,6 +284,8 @@ msgid ""
 "Aggregation of raster impact layers by arbitrary polygon layers (such as "
 "kelurahan boundaries)"
 msgstr ""
+"Aggregasi untuk layer dampak raster dengan batas berupa polygon (seperti "
+"batas kelurahan)"
 
 # 8c66256b35ff44d09f3990c610c449ef
 #: ../../source/user-docs/changelog.rst:81
@@ -255,18 +294,24 @@ msgid ""
 "changing thresholds). This is an interim measure while the team is working "
 "on a GUI to manipulate impact functions more generally."
 msgstr ""
+"Dukungan terbatas untuk mendukung konfigurasi saat running (misalnya dengan "
+"merubah batas ambang). Ini merupakan ukuran interim selama tim bekerja pada "
+"GUI untuk memanipulasi fungsi dampak secara lebih umum."
 
 # 23dde49eb5504d0dbdf6b877c3c894cc
 #: ../../source/user-docs/changelog.rst:84
 msgid ""
-"More DRR actions added to impact function reports (such as how will warnings"
-" be disseminated, how will we reach stranded people etc.)"
+"More DRR actions added to impact function reports (such as how will warnings "
+"be disseminated, how will we reach stranded people etc.)"
 msgstr ""
+"Lebih banyak aksi pengurangan resiko bencana yang ditambahkan pada report "
+"hasil analisis dampak (seperti bagaimana peringatan bencana disampaikan, "
+"bagaimana bantuan mencapai orang yang tinggal di tempat terpencil, dst)"
 
 # aa5a78a6a630431a88f23821e40ce088
 #: ../../source/user-docs/changelog.rst:86
 msgid "Volcanic (zonal hazard) impact assessments on building and population"
-msgstr ""
+msgstr "Penilaian dampak vulkanik (area bahaya) pada bangunan dan populasi"
 
 # df9487a81de94caa8401593805e61dd7
 #: ../../source/user-docs/changelog.rst:87
@@ -274,6 +319,8 @@ msgid ""
 "New function table view that lists all the available impact functions and "
 "allows them to be filtered by different criteria."
 msgstr ""
+"Fungsi baru pada table view yang mendaftar semua fungsi dampak yang dapat "
+"digunakan dan memungkinkannya untuk diseleksi berdasarkan kriteria."
 
 # f15048c8999d43bc9bde7741e76af4fc
 #: ../../source/user-docs/changelog.rst:89
@@ -281,11 +328,13 @@ msgid ""
 "Lots of small improvements to error reporting, GUI, translations and code "
 "quality."
 msgstr ""
+"Beberapa penyelesaian kecil mengenail laporan kesalahan, GUI, penejermahan "
+"dan kualitas kode."
 
 # c6c0675fcd8c4221af87554c30da1300
 #: ../../source/user-docs/changelog.rst:92
 msgid "Changelog for version 0.4.1"
-msgstr ""
+msgstr "Changelog untuk version 0.4.1"
 
 # 14874533aee14a0e8c069052575d9453
 #: ../../source/user-docs/changelog.rst:94
@@ -294,16 +343,18 @@ msgid ""
 "changes only so that InaSAFE can be deployed via the official QGIS "
 "repository."
 msgstr ""
+"Ini adalah rilis bugfix kecil dengan perubahan kemasan dan dokumentasi "
+"terkait supaya InaSAFE dapat digunakan melalui repositori resmi QGIS."
 
 # 5b3fd41a43994966ace4916c11ea2cbf
 #: ../../source/user-docs/changelog.rst:96
 msgid "Added InaSAFE tutorial to sphinx documentation"
-msgstr ""
+msgstr "Penambahan InaSAFE tutorial ke dokumentasi sphinx"
 
 # 3e4c8daab27c49479bc213c0ae592270
 #: ../../source/user-docs/changelog.rst:99
 msgid "Changelog for version 0.4.0"
-msgstr ""
+msgstr "Changelog untuk version 0.4.0"
 
 # 042321271cef4d7f91f7a9dcc0911a1e
 #: ../../source/user-docs/changelog.rst:100
@@ -311,68 +362,72 @@ msgid ""
 "Ability to automatically handle multipart vector data: "
 "https://github.com/AIFDR/inasafe/issues/160"
 msgstr ""
+"Kemampuan secara otomatis untuk mengendalikan data vektor yang  multipart: "
+"https://github.com/AIFDR/inasafe/issues/160"
 
 # a715486638b34370b3470ac670d4198f
 #: ../../source/user-docs/changelog.rst:101
 msgid "Better error reporting:"
-msgstr ""
+msgstr "Laporan error yang lebih baik:"
 
 # 4bec4c99403442d9b07f00bbda8a3e4a
 #: ../../source/user-docs/changelog.rst:103
 msgid "https://github.com/AIFDR/inasafe/issues/170"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/170"
 
 # b776ab1cf11f496c83cb085b27046c02
 #: ../../source/user-docs/changelog.rst:104
 msgid "https://github.com/AIFDR/inasafe/issues/161"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/161"
 
 # b94ffd8d9a1a49129956c4adeead5ccb
 #: ../../source/user-docs/changelog.rst:105
 msgid "https://github.com/AIFDR/inasafe/issues/157"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/157"
 
 # 4af60457b7fb49fd8d344e81702c7916
 #: ../../source/user-docs/changelog.rst:107
 msgid "Bug fixing:"
-msgstr ""
+msgstr "Bug fixing:"
 
 # f97be7660b1344a682a3a1cb81db051b
 #: ../../source/user-docs/changelog.rst:109
 msgid "https://github.com/AIFDR/inasafe/issues/159"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/159"
 
 # c0dfe43423f34f36a26e429dfea2595c
 #: ../../source/user-docs/changelog.rst:110
 msgid "https://github.com/AIFDR/inasafe/issues/156"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/156"
 
 # de3adc6045fe47f9b18d8911cf190b78
 #: ../../source/user-docs/changelog.rst:111
 msgid "https://github.com/AIFDR/inasafe/issues/173"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/173"
 
 # 84183e406bdd47d49be9dacd1f0ea912
 #: ../../source/user-docs/changelog.rst:112
 msgid "https://github.com/AIFDR/inasafe/issues/166"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/166"
 
 # 45a6acd1a0c040ff977c93ff4c33459d
 #: ../../source/user-docs/changelog.rst:113
 msgid "https://github.com/AIFDR/inasafe/issues/162"
-msgstr ""
+msgstr "https://github.com/AIFDR/inasafe/issues/162"
 
 # e3f27909f6bc4ff8844071924fe04d6c
 #: ../../source/user-docs/changelog.rst:115
 msgid ""
 "InaSAFE APIs better defined: https://github.com/AIFDR/inasafe/issues/134"
 msgstr ""
+"Definisi yang lebih baik dari InaSAFE "
+"API:https://github.com/AIFDR/inasafe/issues/134"
 
 # 3058cdeda7784ac2ab3a992ebffccd57
 #: ../../source/user-docs/changelog.rst:116
 msgid ""
 "Release procedure developed: https://github.com/AIFDR/inasafe/issues/109"
-msgstr ""
+msgstr "Rilis pembuatan prosedur: https://github.com/AIFDR/inasafe/issues/109"
 
 # d8ab66f6f3314337b33dc23b430fd33b
 #: ../../source/user-docs/changelog.rst:117
@@ -380,32 +435,36 @@ msgid ""
 "Added estimate of displaced people to earthquake fatality model: "
 "https://github.com/AIFDR/inasafe/commit/04f0e1d"
 msgstr ""
+"Penambahan perkiraan perubahan penduduk untuk model gempa bumi yang fatal: "
+"https://github.com/AIFDR/inasafe/commit/04f0e1d"
 
 # 641cc11b525d44748352e63c3a2caf30
 #: ../../source/user-docs/changelog.rst:118
 msgid "Achieved 100% translation for Bahasa Indonesia"
-msgstr ""
+msgstr "Meraih 100% terjemahan untuk Bahasa Indonesia"
 
 # 72e8fa6ea7f243cf9f3bd4dadb91ed0d
 #: ../../source/user-docs/changelog.rst:119
 msgid ""
 "Made bundled test and demo data public with associated license information"
 msgstr ""
+"Membuat seperangkat test dan demo menggunakan data publik dengan informasi "
+"lisensi yang terkait"
 
 # 0b27b86b91454ec3b95a1c0f59378601
 #: ../../source/user-docs/changelog.rst:120
 msgid "Added AusAid and World Bank logos to dock"
-msgstr ""
+msgstr "Penambahan logo AusAid dan World Bank ke dock"
 
 # 93dff1d8e0ce49c8b816a4801034e924
 #: ../../source/user-docs/changelog.rst:121
 msgid "Fixed bug with flood population evacuation reporting units"
-msgstr ""
+msgstr "Fix bug dengan laporan unit populasi evakuasi banjir"
 
 # 11a40a9f110145e89200357df937a962
 #: ../../source/user-docs/changelog.rst:126
 msgid "Changelog for version 0.3.0"
-msgstr ""
+msgstr "Changelog untuk version 0.3.0"
 
 # d75dc93e8ff44125ae614728af487492
 #: ../../source/user-docs/changelog.rst:127
@@ -413,23 +472,28 @@ msgid ""
 "Documentation updates - extended guides for using the |project_name| dock "
 "and keyword editors."
 msgstr ""
+"Dokumentasi update - panduan diperpanjang untuk menggunakan | project_name | "
+"dock dan editor kata kunci."
 
 # 43491749b3fe4c1b89f1046a21c5aad5
 #: ../../source/user-docs/changelog.rst:129
 msgid "Support for remote layers in keywords editor and scenario modelling"
 msgstr ""
+"Dukungan untuk layer terpencil di editor kata kunci dan pemodelan skenario"
 
 # d2e065317cf443f1a0aa24e745b8ef23
 #: ../../source/user-docs/changelog.rst:130
 msgid "Added options dialog"
-msgstr ""
+msgstr "Penambahan dialog pilihan"
 
 # 19d995623f324c11bdb1b74b548ce222
 #: ../../source/user-docs/changelog.rst:131
 msgid ""
-"Support for using all layers in hazard and exposure combos, not just visible"
-" ones (configurable in options dialog)"
+"Support for using all layers in hazard and exposure combos, not just visible "
+"ones (configurable in options dialog)"
 msgstr ""
+"Dukungan dengan menggunakan semua layer ancaman dan combo keterpaparan,tidak "
+"hanya terlihat satu (pengaturan pada dialog pilihan)"
 
 # 97d31a999ef041d28e636e7637217f00
 #: ../../source/user-docs/changelog.rst:133
@@ -437,13 +501,17 @@ msgid ""
 "Support for displaying keywords title in QGIS layer list (configurable in "
 "options dialog)"
 msgstr ""
+"Dukungan untuk menampilkan judul keyword pada layer list di QGIS (pengaturan "
+"pada dialog pilihan)"
 
 # cee66491dfb0466c8a8e5f4150e5b08e
 #: ../../source/user-docs/changelog.rst:135
 msgid ""
-"When selecting a hazard or exposure layer, its keywords are now displayed in"
-" the results area."
+"When selecting a hazard or exposure layer, its keywords are now displayed in "
+"the results area."
 msgstr ""
+"Ketika memilih sebuah layer ancaman atau layer keterpaparan,keywordnya "
+"sekarang sudah di tampilkan pada area hasil."
 
 # 4e49b1f10890440d83519916d1b5468a
 #: ../../source/user-docs/changelog.rst:137
@@ -451,68 +519,71 @@ msgid ""
 "Performance improvements when toggling layer visibility and adding and "
 "removing layers."
 msgstr ""
+"Peningkatan kinerja ketika toggling layer diaktifkan dan menambahkan dan "
+"menghapus layer."
 
 # c9ed00e277244e2b8da44294009b9b2f
 #: ../../source/user-docs/changelog.rst:139
 msgid "Support for QGIS 1.8 when it is released"
-msgstr ""
+msgstr "Dukungan untuk QGIS q.8 ketika ini dirilis"
 
 # b0dfe74f6957408a8a0b15eaa52242fe
 #: ../../source/user-docs/changelog.rst:140
 msgid "Numerous other 'under the hood' bug fixes and improvements"
-msgstr ""
+msgstr "Beberapa peningkatan fix bug dan perbaikan"
 
 # 6c85a9053f784935bfd3e4e9aefbfbb8
 #: ../../source/user-docs/changelog.rst:141
 msgid "Migrated code base from RIAB to InaSAFE and restructured the code base"
-msgstr ""
+msgstr "Migrasi basis kode dari RIAB ke InaSAFE dan pembangunan basis kode"
 
 # 909d674e49b049b88cc07a704ad14542
 #: ../../source/user-docs/changelog.rst:142
 msgid "Added additional tests"
-msgstr ""
+msgstr "Penambahan uji tambahan"
 
 # e28b4f200446417899468480a3b20f20
 # fc135b8555624da2aa0ce8752721820a
 #: ../../source/user-docs/changelog.rst:145
 #: ../../source/user-docs/changelog.rst:160
 msgid "Changelog for version 0.2.1:"
-msgstr ""
+msgstr "Changelog untuk version 0.2.1:"
 
 # 6090eeea9f02498d957b08049f3b37f3
 #: ../../source/user-docs/changelog.rst:146
 msgid "Correct translation of 'run' in indonesian. Closes #128"
-msgstr ""
+msgstr "Penerjemahan yang benar dari 'run' dalam bahasa Indonesia. Pada #128"
 
 # 2ba571d9cb84416ab7b10862310d05ea
 #: ../../source/user-docs/changelog.rst:147
 msgid "Updated so that version number is shown in dock"
-msgstr ""
+msgstr "Pembaruan nomor dari versi ini akan ditunjukan pada dock"
 
 # ec82b01967674642b067034033816c78
 #: ../../source/user-docs/changelog.rst:148
 msgid "Removed generated file from polygon test"
-msgstr ""
+msgstr "Menghilangkan file yang dihasilkan dari uji poligon"
 
 # 33332f715fa1435bb542b71e523affa2
 #: ../../source/user-docs/changelog.rst:149
 msgid "Removed the -dev designation from branch releases"
-msgstr ""
+msgstr "Menghilangkan -dev petunjuk dari rilis cabang"
 
 # a28bafcc42834daab7b4f9a3b7969640
 #: ../../source/user-docs/changelog.rst:150
 msgid "Fix indent error causing noise to show in qgis plugin manager"
 msgstr ""
+"Fix kesalahan masukan karena noise yang ditunjukkan pada manajer Plugin QGIS"
 
 # ae2cdcd397ed472a8e12192b41b12bf9
 #: ../../source/user-docs/changelog.rst:151
 msgid "Fixed typo - BNPD to BNPB"
-msgstr ""
+msgstr "Fix tipo -BNPD ke BNPB"
 
 # 2882451d53604c20813d099252c08d3f
 #: ../../source/user-docs/changelog.rst:152
 msgid "Fixed bug where close button does not dispose of the help dialog"
-msgstr ""
+msgstr "Fix bug ketika tombol keluar tidak membuang dialog bantuan"
 
 # 3e870f3fd48344c7bed416a1c563aced
 #: ../../source/user-docs/changelog.rst:153
@@ -520,6 +591,8 @@ msgid ""
 "Fixed an issue that prevented the use of earthquake functions when using "
 "keywords with lowercase mmi. Closes #142"
 msgstr ""
+"Fix sebuah isu yang dapat mencegah penggunaan fungsi gempa ketika "
+"menggunakan kata kunci dengan huruf kecil mmi. Pada #142"
 
 # 7fc7942cb05d4929a6fd2bc051ec5cd2
 #: ../../source/user-docs/changelog.rst:155
@@ -528,93 +601,100 @@ msgid ""
 "#141. Note that OSX users should upgrade to GDAL 1.9 available here: "
 "http://www.kyngchaos.com/software/qgis"
 msgstr ""
+"Fix untuk isu pemotongan menggunakan mac - plugin tidak dapat bekerja pada "
+"OSX sekarang. Pada #141. Catatan pengguna OSX harus mengupgrade ke GDAL 1.9 "
+"yang tersedia di :http://www.kyngchaos.com/software/qgis"
 
 # 44248f511de24e9fb234b7ff06cb4809
 #: ../../source/user-docs/changelog.rst:162
 msgid "Map printing support"
-msgstr ""
+msgstr "Dukungan percetakan peta"
 
 # b89110e783d748e3a3251ec333b1aa6d
 #: ../../source/user-docs/changelog.rst:163
 msgid "Improved translation support and Indonesian translation updates"
-msgstr ""
+msgstr "Dukungan peningkatan penerjemahan dan update terjemahan Indonesia"
 
 # cbe50283d5454173a3918a8f84b9a092
 #: ../../source/user-docs/changelog.rst:164
 msgid "Rebranded from Risk in a Box to InaSAFE"
-msgstr ""
+msgstr "Penamaan Risiko dalam Box untuk InaSAFE"
 
 # ece26951ad924fe88dbdbddc8bee85fb
 #: ../../source/user-docs/changelog.rst:165
 msgid "Documentation updates and documented windows developer procedures"
 msgstr ""
+"Pembaharuan dokumentasi dan pendokumentasian pembuat prosedur pada windows"
 
 # 6e8cb276640d409abfb0d120a3c67288
 #: ../../source/user-docs/changelog.rst:166
 msgid "Support for generating documentation and running tests under Windows"
 msgstr ""
+"Dukungan untuk menghasilkan dokumentasi dan menjalankan tes di bawah Windows"
 
 # 96d8f7c45b52468e8ebbd3838b036530
 #: ../../source/user-docs/changelog.rst:167
 msgid "Scripts for semi-automatic packaging of a release"
-msgstr ""
+msgstr "Skrip untuk paket rilis semi-automatis"
 
 # 287a482277fb4123a33b6a432949e65e
 #: ../../source/user-docs/changelog.rst:168
 msgid "Improvements to Impact calculator algorithms"
-msgstr ""
+msgstr "Perbaikan kepada perhitungan algoritma keterdampakan"
 
 # 00a6c001686f430da82d1cf3312c5773
 #: ../../source/user-docs/changelog.rst:171
 msgid "Changelog for version 0.1.0:"
-msgstr ""
+msgstr "Changelog untuk versi 0.1.0:"
 
 # 38f8a907a3154e4f86c772546a374419
 #: ../../source/user-docs/changelog.rst:173
 msgid "First QGIS plugin implementation of |project_name|."
-msgstr ""
+msgstr "Implementasi plugin QGIS yang pertama |project_name|."
 
 # e999a5628a6c4d21a336c1c99071dd79
 #: ../../source/user-docs/changelog.rst:174
 msgid "Migrated calculation engine from Risiko project."
-msgstr ""
+msgstr "Migrasi mesin penghitung dari projek Risiko."
 
 # 31b5b2b625314b45850e1c063a124729
 #: ../../source/user-docs/changelog.rst:175
 msgid "Implemented support for polygon hazard layers."
-msgstr ""
+msgstr "Penerapan dukungan untuk layer bahaya poligon."
 
 # a6cbdf74a36446f5b64db10163ad005e
 #: ../../source/user-docs/changelog.rst:176
 msgid "Added dock widget for designing and executing a scenario model."
 msgstr ""
+"penambahan dock widget untuk mendesain dan menjalankan model sekenario."
 
 # 6987c12cddee49debdc57223a9fdd04b
 #: ../../source/user-docs/changelog.rst:177
 msgid "Added the keyword editor for assigning metadata to input files."
 msgstr ""
+"Menambahkan keyword editor untuk menugaskan metadata sebagai file masukan."
 
 # b367ee6ba8d7446492899136c73c81ae
 #: ../../source/user-docs/changelog.rst:178
 msgid "Added integrated context help tool."
-msgstr ""
+msgstr "Menambahkan intregrasi context alat bantuan."
 
 # bcac7cca0405493eb6c8142d20f883cf
 #: ../../source/user-docs/changelog.rst:179
 msgid "Removed django specific dependencies from the InaSAFE libs."
-msgstr ""
+msgstr "Menghilangkan django yang spesifik dari libs InaSAFE."
 
 # 55e47b70e0be4306b70339da4875fa28
 #: ../../source/user-docs/changelog.rst:180
 msgid "removed dependency on SciPy"
-msgstr ""
+msgstr "menghilangkan dependensi pada Scipy"
 
 # e01d4da836bd4f3dac000203ad518a9d
 #: ../../source/user-docs/changelog.rst:181
 msgid "Support for internationalisation."
-msgstr ""
+msgstr "Dukungan internasionalisasi"
 
 # 642ed82e4cb14113b60786377c300276
 #: ../../source/user-docs/changelog.rst:182
 msgid "Comprehensive documentation system."
-msgstr ""
+msgstr "Sisterm dokumentasi yang komprehensif."
