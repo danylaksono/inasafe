@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012, QGIS project
 # This file is distributed under the same license as the QGIS Documentation Project package.
-# 
+#
 # Translators:
 # Ismail Sunni <imajimatika@gmail.com>, 2013.
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2013-03-07 10:27\n"
 "PO-Revision-Date: 2013-03-18 02:07+0000\n"
 "Last-Translator: Ismail Sunni <imajimatika@gmail.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/inasafe/language/id/)\n"
+"Language-Team: Indonesian "
+"(http://www.transifex.com/projects/p/inasafe/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: id\n"
 
 # 34b4bd6016a04758bea8eb16fdb032e3
 #: ../../source/user-docs/faq.rst:6
@@ -32,16 +34,21 @@ msgstr "Saya menemukan bug, bagaimana saya melaporkannya?"
 #: ../../source/user-docs/faq.rst:11
 msgid ""
 "We manage the project issues using a GitHub issue tracker. The `InaSAFE "
-"<https://github.com/AIFDR/inasafe/issues?direction=desc&sort=created&state=open>`_"
-" issue tracker is open to everyone, though you will first need to register a"
-" (free) account on GitHub to use it. You can find the GitHub self-"
-"registration page `here <https://github.com/signup/free>`_."
+"<https://github.com/AIFDR/inasafe/issues?direction=desc&sort=created&state=open>`_ "
+"issue tracker is open to everyone, though you will first need to register a "
+"(free) account on GitHub to use it. You can find the GitHub "
+"self-registration page `here <https://github.com/signup/free>`_."
 msgstr ""
+"Kami mengelola isu proyek menggunakan pelacak isu GitHub. `InaSAFE "
+"<https://github.com/AIFDR/inasafe/issues?direction=desc&sort=created&state=open>` "
+"_ pelacak isu terbuka untuk semua orang, meskipun Anda terlebih dahulu harus "
+"membuat akun (gratis) pada Github untuk menggunakannya. Anda dapat menemukan "
+"halaman diri pendaftaran GitHub `sini <https://github.com/signup/free>` _."
 
 # f8e8f27a21864c88a0c1e37340bfa723
 #: ../../source/user-docs/faq.rst:18
 msgid "Do I need to pay to use |project_name|?"
-msgstr ""
+msgstr "perlukan saya membayar untuk menggunakan |project_name|?"
 
 # f0ffc69de3054a51ab5f495ffb88c70f
 #: ../../source/user-docs/faq.rst:20
@@ -51,7 +58,7 @@ msgstr "Tidak , perangkat lunak ini Gratis dan Open Source"
 # 154e53d7da9b4cf8806d2a6092a40fbb
 #: ../../source/user-docs/faq.rst:23
 msgid "What license is |project_name| published under?"
-msgstr ""
+msgstr "Apakah lisensi dari |project_name| dibawah penerbitnya?"
 
 # ea2427d7756a488fa3b8caf004f75160
 #: ../../source/user-docs/faq.rst:25
@@ -60,6 +67,9 @@ msgid ""
 "of which is available at `www.gnu.org/licenses/gpl-2.0.txt "
 "<http://www.gnu.org/licenses/gpl-2.0.txt>`_."
 msgstr ""
+"|project_name| adalah dibawah penerbit dengan menggunakan lisesi GPL versi "
+"2, text sepenuhnya tersedia di `www.gnu.org/licenses/gpl-2.0.txt "
+"<http://www.gnu.org/licenses/gpl-2.0.txt>`_."
 
 # 7725a9c59bb54e08802b76490c86885f
 #: ../../source/user-docs/faq.rst:30
@@ -67,6 +77,9 @@ msgid ""
 "Under the terms of the license of you may freely copy, share and modify the "
 "software, as long as you make it available under the same license."
 msgstr ""
+"Dibawah ketentuan dari lisensi Anda dapat mengcopynya secara "
+"gratis,menyebarkan dan memodifikasi softwarenya,selama Anda membuat lisensi "
+"yang sama."
 
 # 7dcec272744f4b5ea2290c98f5b27ef9
 #: ../../source/user-docs/faq.rst:34
@@ -81,24 +94,32 @@ msgid ""
 "<http://www.ausaid.gov.au/>`_ & `the World Bank "
 "<http://www.worldbank.org/>`_."
 msgstr ""
+"Proyek ini sedang dikembangkan 'for the good of humanity dan sudah tergabung "
+"dengan beberapa pengembang `BNPB <http://www.bnpb.go.id/>`_, `AusAid "
+"<http://www.ausaid.gov.au/>`_ & `the World Bank "
+"<http://www.worldbank.org/>`_."
 
 # 06e0e850f60b4ed8a883ab0db96eae89
 #: ../../source/user-docs/faq.rst:42
 msgid "Could we request a new feature?"
-msgstr ""
+msgstr "Dapatkan kita meminta sebuah fitur?"
 
 # 4f345f70ac464544a638d1df4e60083b
 #: ../../source/user-docs/faq.rst:44
 msgid ""
 "If you have a feature request, please use the `issue tracker "
-"<https://github.com/AIFDR/inasafe/issues?direction=desc&sort=created&state=open>`_"
-" to let us know about it, using the same procedure as for bug reporting."
+"<https://github.com/AIFDR/inasafe/issues?direction=desc&sort=created&state=open>`_ "
+"to let us know about it, using the same procedure as for bug reporting."
 msgstr ""
+"Apabila Anda memiliki permintaan sebuath fitu, tolong gunakan `issue tracker "
+"<https://github.com/AIFDR/inasafe/issues?direction=desc&sort=created&state=open>`_ "
+"mari kita ketahui tentang hal itu, dengan menggunakan prosedur yang sama "
+"seperti untuk pelaporan bug."
 
 # 115e453dad004c568b41138063f2f03a
 #: ../../source/user-docs/faq.rst:50
 msgid "How do I rename a shape file and all the helper files?"
-msgstr ""
+msgstr "Bagaimana cara mengubah nama bentuk file dan semua file penolong?"
 
 # 16f08f8b47544f1896ef1ea99d59837a
 #: ../../source/user-docs/faq.rst:52
@@ -106,34 +127,43 @@ msgid ""
 "Use the rename command. rename [ -v ] [ -n ] [ -f ] perlexpr [ files ]. For "
 "example::"
 msgstr ""
+"Gunakan command penggantian nama.ganti nama [ -v ] [ -n ] [ -f ] perlexpr [ "
+"files ]. contohnya::"
 
 # 1978b9db409343908a4bce01b4fe669a
 #: ../../source/user-docs/faq.rst:58
 msgid "How do I reproject a spatial data file to WGS84 geographic coordinates"
 msgstr ""
+"bagaimana saya melakukan proyeksi ulang sebuah file data spasial ke "
+"koordinat geografis WGS84"
 
 # 8bbc898968524eed8f061373b9244165
 #: ../../source/user-docs/faq.rst:60
 msgid "For raster data, use gdalwarp, for example::"
-msgstr ""
+msgstr "Pada data raster gunakan gdalwarp, contohnya::"
 
 # ba6d65d032494629a4881ed39076ec66
 #: ../../source/user-docs/faq.rst:64
 msgid "For vector data use ogr2ogr. For example from TM-3 zone 48.2::"
-msgstr ""
+msgstr "Untuk data vektor gunakan ogr2ogr. Contohnya dari TM-3 zone 48.2::"
 
 # 5d5283c490154395a8ec98496d58ae57
 #: ../../source/user-docs/faq.rst:69
 msgid "How do I get Open Street Map building data into |project_name|?"
 msgstr ""
+"Bagaimana saya mendapatkan data bangunan pada Open Street Map ke "
+"|project_name|?"
 
 # 11cd89464d5f4db6a4d4e0a27ece807a
 #: ../../source/user-docs/faq.rst:71
 msgid ""
-"For Indonesia, you can download latest collections at `data.kompetisiosm.org"
-" <http://data.kompetisiosm.org>`_. or you can add our Open Street Map "
+"For Indonesia, you can download latest collections at `data.kompetisiosm.org "
+"<http://data.kompetisiosm.org>`_. or you can add our Open Street Map "
 "building PostGIS mirror to InaSAFE:"
 msgstr ""
+"Untuk Indonesia, Anda dapat mendownloadnya pada `data.kompetisiosm.org "
+"<http://data.kompetisiosm.org>`_.atau anda dapat menambahkan mirror PostGIS "
+"Open Street Map pada InaSAFE:"
 
 # 29fd11b6934247e9bb5c51b740635d5b
 #: ../../source/user-docs/faq.rst:75
@@ -141,11 +171,13 @@ msgid ""
 "Add PostGIS layer with host=203.77.224.77, database=osm, username=aifdr, "
 "port 5432, SSL mode=disable"
 msgstr ""
+"Menambahkan layer Postgis dengan host=203.77.224.77, database=osm, "
+"username=aifdr,port 5432, SSL mode=disable"
 
 # 978d436c350545f1b41a549d32e0591f
 #: ../../source/user-docs/faq.rst:77
 msgid "Select view named vw_planet_osm_polygon"
-msgstr ""
+msgstr "Pilih tampilan nama vw_planet_osm_polygon"
 
 # 5f443ed1ab3b4f64ba4af0d10209f6e1
 #: ../../source/user-docs/faq.rst:78
@@ -153,29 +185,34 @@ msgid ""
 "Build query: upper(geometrytype(\"way\")) IN ('POLYGON','MULTIPOLYGON') AND "
 "BUILDING != ''"
 msgstr ""
+"Pembuat query:upper(geometrytype(\"way\")) IN ('POLYGON','MULTIPOLYGON') AND "
+"BUILDING != ''"
 
 # c8c5e396aeae4f9c82ccc827b3d07587
 #: ../../source/user-docs/faq.rst:81
 msgid "Go to `Preset JOSM <http://josm.openstreetmap.de/wiki/Presets>`_."
-msgstr ""
+msgstr "Kunjungi `Preset JOSM <http://josm.openstreetmap.de/wiki/Presets>`_."
 
 # 13510a928d0348eb98f2b5e74d0a227a
 #: ../../source/user-docs/faq.rst:82
-msgid ""
-"Find and download `Building` preset created by Kate Chapman and save it"
+msgid "Find and download `Building` preset created by Kate Chapman and save it"
 msgstr ""
+"Temukan dan unduh `Building` preset yang dibuat oleh Kate Chapman dan "
+"kemudian menyimpannya"
 
 # c2fec18bffc440e993f152f5dfc6c048
 #: ../../source/user-docs/faq.rst:83
 msgid ""
-"Go to HOT Exports website `www.hot-export.geofabrik.de <http://hot-"
-"export.geofabrik.de>`_."
+"Go to HOT Exports website `www.hot-export.geofabrik.de "
+"<http://hot-export.geofabrik.de>`_."
 msgstr ""
+"Kunjungi website HOT Export `www.hot-export.geofabrik.de "
+"<http://hot-export.geofabrik.de>`_."
 
 # b88cb6d4f1794012ba3cbb919bab5f52
 #: ../../source/user-docs/faq.rst:85
 msgid "Go to `New Job` menu in the upper right of the page"
-msgstr ""
+msgstr "Pilih menu `New Job`pada jendela kanan atas"
 
 # e406d697e20a4887a328e9c85bd1aca7
 #: ../../source/user-docs/faq.rst:86
@@ -183,16 +220,20 @@ msgid ""
 "Select region, currently only 3 regions are supported by HOT Export (Haiti, "
 "Indonesia, Africa)"
 msgstr ""
+"Pilih wilayah, saat ini hanya 3 daerah yang didukung oleh Export HOT (Haiti, "
+"Indonesia, Afrika)"
 
 # 132a63c08f2546edaa69b2f1ba4c23a9
 #: ../../source/user-docs/faq.rst:88
 msgid "Fill `Job Name` and `Description`"
-msgstr ""
+msgstr "Isi `Job Name`dan `Description`"
 
 # 38e0e29202db4f17bb696d590d0f0615
 #: ../../source/user-docs/faq.rst:89
 msgid "Select area that you want to export by zooming or panning the map"
 msgstr ""
+"Pilih area yang Anda inginkan untuk di ekspor dengan melakukan pembesaran "
+"atau pemberian tanda pada peta"
 
 # b3b7a79f4f88418592a6e742575fe15d
 #: ../../source/user-docs/faq.rst:90
@@ -200,17 +241,22 @@ msgid ""
 "You can choose smaller area by clicking `Select Smaller Area` and creating "
 "rectangle in the map or filling min/max longitude/latitude value for it"
 msgstr ""
+"Anda dapat memilih area yang diinginkan dengan mengklik `Select Smaller "
+"Areaa` dan membuat sebuah kotak pada peta atau mengisi nilai "
+"minimal/maksimal dari lintang/bujur"
 
 # 78d960816cfb4aa8bfd683701a729068
 #: ../../source/user-docs/faq.rst:92
 msgid "Click `Save` if your map is ready"
-msgstr ""
+msgstr "Klik `Save`dan peta anda sudah siap"
 
 # e764b98899af426b855c5c2b002da4bc
 #: ../../source/user-docs/faq.rst:93
 msgid ""
 "Upload JOSM Preset File which have been downloaded before, and click `Save`"
 msgstr ""
+"Upload file Preset JOSM ketika sudah didownload sebelumnya, kemudian klik "
+"`Save`"
 
 # d9c14abb87c94874b2927e14d8169ef6
 #: ../../source/user-docs/faq.rst:94
@@ -218,6 +264,8 @@ msgid ""
 "Your job is created and you have to wait until it finish. It'll take some "
 "minutes if your map is big one"
 msgstr ""
+"Pekerjaan Anda sudah dibuat dan Anda harus menunggu sampai selesai. Ini akan "
+"memnbutuhkan beberapa menit apabila peta yang anda pilih terlalu besar"
 
 # c7ee71eb01464ac996975c35bc825cc1
 #: ../../source/user-docs/faq.rst:96
@@ -225,21 +273,25 @@ msgid ""
 "When the job is finished, there will be a table contains files that can be "
 "downloaded"
 msgstr ""
+"Ketika pekerjaan Anda selesai, maka akan menampilkan isi file tabel yang "
+"bisaa Anda download"
 
 # a743a63e3f6a49cd9e29658e3bad54bb
 #: ../../source/user-docs/faq.rst:98
 msgid "Download the `ESRI Shapefile (zipped)`"
-msgstr ""
+msgstr "Download yang  `ESRI Shapefile (zipped)`"
 
 # db822285ad594e8196ef8aebe2817a10
 #: ../../source/user-docs/faq.rst:99
 msgid "Extract it on your computer, and the data will be ready to use"
-msgstr ""
+msgstr "Extrak pada komputer Anda, dan datanya sudah siap digunakan"
 
 # cacfab9efb0a4792965c88e5941fcd79
 #: ../../source/user-docs/faq.rst:102
 msgid "How do I take screen capture e.g. for use in a presentation?"
 msgstr ""
+"Bagaimana saya mengambil screen capture e.g. untuk digunakan sebagai "
+"persentasi?"
 
 # 8f1080e0414a4e7c82d9d72902c9ca13
 #: ../../source/user-docs/faq.rst:104
@@ -248,27 +300,32 @@ msgid ""
 "recordmydesktop (start and stop icon in the top bar) Convert to other "
 "formats using mencoder, e.g::"
 msgstr ""
+"Pada ubuntu,dapatkan paket gtk-recormydesktop dan alat perekam dengan "
+"menggunakan recordmydesktop (ikon start dan stop pada posisi atas bar) "
+"Convert ke format lain untuk merekam, e.g::"
 
 # 5d72c4e09b0e4be6bb732d2107d96a68
 #: ../../source/user-docs/faq.rst:111
 msgid "or::"
-msgstr ""
+msgstr "atau::"
 
 # 735c8e96f6274aeda321ea3ff4fa927c
 #: ../../source/user-docs/faq.rst:117
 msgid "How do I convert a vector hazard layer to a raster layer?"
 msgstr ""
+"Bagaimana saya mengkonversi layer vektor ancaman  ke bentuk layer raster?"
 
 # c48c032387b6440386fdf1638bd45962
 #: ../../source/user-docs/faq.rst:119
 msgid ""
 "For vector to raster conversion, use gdal_rasterize utility, for example::"
 msgstr ""
+"Untuk konversi vektor ke raster, gunakan alat gdal_rasterize, contohnya::"
 
 # 74ad598b36cd425d9f71d8f03ad89247
 #: ../../source/user-docs/faq.rst:125
 msgid "Why does the plugin not show up in my QGIS Plugin Manager?"
-msgstr ""
+msgstr "Bagaimana kalau plugin tidak muncul pada QGIS Plugin Manager saya?"
 
 # 214c7e98af184258b9f0ae390126b9e1
 #: ../../source/user-docs/faq.rst:127
@@ -276,36 +333,39 @@ msgid ""
 "One common issue is that if you upgraded from QGIS 1.7.x to 1.8 you may not "
 "get the new plugin repo added to your repo list. To fix this you can do:"
 msgstr ""
+"Salah satu masalah umum adalah bahwa jika Anda upgrade dari 1.7.x QGIS "
+"menjadi 1,8 Anda mungkin tidak mendapatkan repositori plugin baru pada "
+"daftar repositori Anda. Untuk mengatasinya Anda bisa melakukan:"
 
 # 1ab8c0c7b6884584bfdd99e11a59333b
 #: ../../source/user-docs/faq.rst:130
 msgid "open QGIS"
-msgstr ""
+msgstr "Buka QGIS"
 
 # c27cec3392524e8fbe452883d1c93a6a
 #: ../../source/user-docs/faq.rst:131
 msgid "Go Plugins -> Fetch Python Plugins"
-msgstr ""
+msgstr "Pilih Plugins -> Fetch Python Plugins"
 
 # 027f682c5ef24db3a101cf9ef082484e
 #: ../../source/user-docs/faq.rst:132
 msgid "click 'Repositories' tab"
-msgstr ""
+msgstr "klik tab 'Repositories'"
 
 # 06effc68f8b34db2894a89512ba98702
 #: ../../source/user-docs/faq.rst:133
 msgid "click add"
-msgstr ""
+msgstr "klik add"
 
 # 50ff0e551d894a9b8f58db7b837823f4
 #: ../../source/user-docs/faq.rst:134
 msgid ":guilabel:`Name`: Official QGIS Repository"
-msgstr ""
+msgstr ":guilabel:`Name`: Official QGIS Repository"
 
 # a3b444b5355e4379b544ed0d57a01af2
 #: ../../source/user-docs/faq.rst:135
 msgid ":guilabel:`Url`: http://plugins.qgis.org/plugins/plugins.xml"
-msgstr ""
+msgstr ":guilabel:`Url`: http://plugins.qgis.org/plugins/plugins.xml"
 
 # 41ba0f9c5efa4029a5ca36de7e1c0890
 #: ../../source/user-docs/faq.rst:136
@@ -313,9 +373,13 @@ msgid ""
 "Save it and the plugin repo list should update. If it doesn't, close and "
 "open QGIS to force an update."
 msgstr ""
+"Simpan dab repositori plugin anda akan terupdate. Apabila tidak bekerja, "
+"tutup dan buka kembali QGIS untuk memaksa mendapatkan updatenya."
 
 # bc4611b6affc4269a2be890bf94ec08d
 #: ../../source/user-docs/faq.rst:138
 msgid ""
 "In the python plugin manager main tab now you should find InaSAFE available"
 msgstr ""
+"Pada python plugin manager main tab sekarang anda bisa menemukan InaSAFE "
+"yang tersedia"
