@@ -315,6 +315,7 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:130
 msgid "Valid subcategories for subcategory 'tsunami' or subcategory 'flood':"
 msgstr ""
+"Subkategori yang valid untuk subkategori 'tsunami' atau subkategori 'banjir':"
 
 # 7997c603bb1440779070ebb7551231ac
 # bf30858b8c2c426f85e1b3b2080e20d9
@@ -325,22 +326,22 @@ msgstr ""
 #: ../../source/user-docs/keywords.rst:139
 #: ../../source/user-docs/keywords.rst:157
 msgid "units"
-msgstr ""
+msgstr "satuan"
 
 # 2dc8888305494290a9bb4d83313e105a
 #: ../../source/user-docs/keywords.rst:137
 msgid "m"
-msgstr ""
+msgstr "m"
 
 # 1da4461f2e03467cabc800a56cb1b0b6
 #: ../../source/user-docs/keywords.rst:138
 msgid "wet/dry"
-msgstr ""
+msgstr "wet/dry"
 
 # a76c99e4f280428b93717d38b6ac941b
 #: ../../source/user-docs/keywords.rst:139
 msgid "feet"
-msgstr ""
+msgstr "feet"
 
 # 41babd09fc8e4a0a968b93c08dd7106d
 #: ../../source/user-docs/keywords.rst:142
@@ -349,6 +350,9 @@ msgid ""
 "be a raster layer where each cell in the raster represents a depth in the "
 "units specified."
 msgstr ""
+"Dalam kasus dimana satuan adalah m (meter) atau feet, dataset masukan harus "
+"berupa layer raster dimana tiap sel dalam raster merepresentasikan kedalaman "
+"dalam satuan yang ditentukan."
 
 # de1ffc84a60e40ceacf973aea7cf726b
 #: ../../source/user-docs/keywords.rst:146
@@ -357,16 +361,19 @@ msgid ""
 "layer. Any area that is inside a polygon is considered 'wet' and any area "
 "outside of a polygon is considered to be 'dry'."
 msgstr ""
+"Dalam kasus wet/dry, dataset masukan harus berupa layer vektor poligon. "
+"Semua area yang berada di dalam poligon dianggap 'wet' dan semua area di "
+"luar poligon dianggap 'dry'."
 
 # 608cdfe2d3eb414ea940de464ddc7421
 #: ../../source/user-docs/keywords.rst:150
 msgid "Valid subcategories for subcategory 'volcano'"
-msgstr ""
+msgstr "Subkategori yang valid untuk subkategori 'volcano'"
 
 # 98fefc8f587443498b5a4d6e3b000f32
 #: ../../source/user-docs/keywords.rst:157
 msgid "kg2/m2"
-msgstr ""
+msgstr "kg/m2"
 
 # ead09c7c0bbf404e876181cc82597e98
 #: ../../source/user-docs/keywords.rst:160
@@ -374,6 +381,9 @@ msgid ""
 "In this case the dataset should be a raster layer where each cell represents "
 "the kilograms per meters squared of ash fall on that cell."
 msgstr ""
+"Dalam kasus ini dataset harus berupa layer raster dimana tiap sel "
+"merepresentasikan setiap kilogram per meter persegi debu yang gugur pada sel "
+"tersebut."
 
 # 6434ef2a9f2c436da22807441fecac60
 #: ../../source/user-docs/keywords.rst:163
@@ -381,6 +391,9 @@ msgid ""
 "'units' and 'datatype' (described below) should be considered to be mutually "
 "exclusive - i.e. they should not both be present in any given keywords file."
 msgstr ""
+"'satuan' dan 'tipe data' (dideskripsikan di bawah) harus dianggap khusus "
+"satu sama lain - i.e. keduanya seharusnya tidak hadir pada file keyword "
+"apapun yang diberikan."
 
 # 691428bb3a754b24b3c4846ad3de5d97
 #: ../../source/user-docs/keywords.rst:168
