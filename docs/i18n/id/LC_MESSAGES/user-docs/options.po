@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012, QGIS project
 # This file is distributed under the same license as the QGIS Documentation Project package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,12 +10,14 @@ msgstr ""
 "POT-Creation-Date: 2013-03-07 10:27\n"
 "PO-Revision-Date: 2013-03-07 09:24+0000\n"
 "Last-Translator: timlinux <tim@linfiniti.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/inasafe/language/id/)\n"
+"Language-Team: Indonesian "
+"(http://www.transifex.com/projects/p/inasafe/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: id\n"
 
 # e35eb4f3840343e7bdb6905cb3e89690
 #: ../../source/user-docs/options.rst:7
@@ -43,11 +45,13 @@ msgid ""
 "You can click on the :guilabel:`Help` button at any time and it will open "
 "the help documentation browser to this page."
 msgstr ""
+"Kami bisa memilih pada :guilabel: tombol 'Help' setiap waktu dan itu akan "
+"membuka browser dokumentasi bantuan ke halamannya."
 
 # a0b3893e99a5496494146e97e9a0dd62
 #: ../../source/user-docs/options.rst:26
 msgid "The following options are available on the :guilabel:`Options Dialog`:"
-msgstr ""
+msgstr "Pilihan berikut tersedia dalam :guilabel:'Options Dialog':"
 
 # 10ae8de39caf42f28feac5ea22d563ec
 #: ../../source/user-docs/options.rst:28
@@ -72,8 +76,8 @@ msgstr ""
 #: ../../source/user-docs/options.rst:37
 msgid ""
 ":guilabel:`Zoom to impact layer on scenario estimate completion` : This "
-"option will cause the map view to zoom in/out in order to completely contain"
-" the InaSAFE impact scenario map output when an analysis completes."
+"option will cause the map view to zoom in/out in order to completely contain "
+"the InaSAFE impact scenario map output when an analysis completes."
 msgstr ""
 
 # ed273803b3c34008a60f709be9e33372
@@ -81,8 +85,8 @@ msgstr ""
 msgid ""
 ":guilabel:`Hide exposure layer on scenario estimate completion` : This "
 "option will cause QGIS to turn off the exposure layer used when InaSAFE "
-"completes the current analysis. You can re-enable the layer visibility again"
-" by checking its checkbox in the legend."
+"completes the current analysis. You can re-enable the layer visibility again "
+"by checking its checkbox in the legend."
 msgstr ""
 
 # 6d47ebafd49e4c43aaa311f02a1959bd
@@ -99,8 +103,8 @@ msgid ""
 ":guilabel:`When clipping, also clip features (e.g. will clip polygon "
 "smaller)` : This option will any polygons that extend beyond the analysis "
 "extents to be clipped so that they are contained by the analysis extents. "
-"For example if you have a flood hazard polygon layer that extends far beyond"
-" your area of interest, the flood polygons will be reduced so that only the "
+"For example if you have a flood hazard polygon layer that extends far beyond "
+"your area of interest, the flood polygons will be reduced so that only the "
 "part inside of your area of interested is retained. This can speed up "
 "processing time somewhat."
 msgstr ""
@@ -116,8 +120,8 @@ msgid ""
 "issues people encounter. Please note the warning text below this option "
 "which is included here in full: \"Note: The above setting requires a QGIS "
 "restart to disable / enable. Error messages and diagnostic information will "
-"be posted to http://sentry.linfiniti.com/inasafe-desktop/. Some institutions"
-" may not allow you to enable this feature - check with your network "
+"be posted to http://sentry.linfiniti.com/inasafe-desktop/. Some institutions "
+"may not allow you to enable this feature - check with your network "
 "administrator if unsure. Although the data is submitted anonymously, the "
 "information contained in tracebacks may contain file system paths which "
 "reveal your identity or other information from your system.\""
@@ -142,8 +146,8 @@ msgstr ""
 #: ../../source/user-docs/options.rst:72
 msgid ""
 ":guilabel:`Keyword cache for remote datasources` : This option is used to "
-"determine where keywords are stored for datasets where it is not possible to"
-" write them into a .keywords file. See :doc:`keywords` for more information "
+"determine where keywords are stored for datasets where it is not possible to "
+"write them into a .keywords file. See :doc:`keywords` for more information "
 "on the keywords system."
 msgstr ""
 
