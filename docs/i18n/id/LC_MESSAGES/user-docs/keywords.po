@@ -590,7 +590,7 @@ msgstr ""
 # 123416a835a74c1aa219621abbbd4b54
 #: ../../source/user-docs/keywords.rst:227
 msgid "An example of the keywords editor in minimal mode is shown below."
-msgstr ""
+msgstr "Contoh editor keyword dalam mode minimal ditunjukkan di bawah."
 
 # a554c6a0632b48d4b39d4cbfccca9320
 #: ../../source/user-docs/keywords.rst:232
@@ -601,6 +601,11 @@ msgid ""
 "manually define and remove key/value pairs. Three sections are provided for "
 "this:"
 msgstr ""
+"**Advanced mode**: Dalam mode ini beberapa pilihan ekstra disediakan sebagai "
+"tambahan untuk pilihan mode minimal. Tidak seperti mode minimal, dalam mode "
+"lanjutan hanya validasi dasar yang dilakukan dan pengguna diberikan "
+"fleksibilitas lebih untuk mendefinisikan secara manual dan menghapus "
+"pasangan kunci/nilai. Tiga bagian disediakan untuk ini:"
 
 # a8ad07176fbd4540838e2a8b32a00a1e
 #: ../../source/user-docs/keywords.rst:238
@@ -609,6 +614,9 @@ msgid ""
 "of keywords, enters a free-form value and then adds the key/value pair to "
 "the keywords list (see below)."
 msgstr ""
+"**Predefined** - Dalam bagian ini, pengguna memolih dari daftar konstrain "
+"keyword, memasukkan formulir bebas nilai dan kemudian menambahkan pasangan "
+"kunci/nilai pada daftar keyword (lihat di bawah)."
 
 # 941d108c0a53440ea72980fd8effbdfb
 #: ../../source/user-docs/keywords.rst:241
@@ -617,6 +625,9 @@ msgid ""
 "entered - any single lower case word will be accepted for both the key and "
 "the value components."
 msgstr ""
+"**User defined** - Pada bagian ini, tidak ada konstrain pada keyword yang "
+"dimasukkan - semua kata huruf kecil tunggal akan diterima untuk kedua "
+"komponen kunci dan nilai."
 
 # f75d09d97e624410a4547c3d6e35f12b
 #: ../../source/user-docs/keywords.rst:244
