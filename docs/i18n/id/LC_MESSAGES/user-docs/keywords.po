@@ -640,16 +640,24 @@ msgid ""
 ":kbd:`Control-clicking` on multiple keyword entries in the current keyword "
 "list and then clicking :guilabel:`Remove selected`"
 msgstr ""
+"**Current keywords** - Dalam wilayah ini selesaikan daftar semua keyword "
+"untuk dataset yang ditampilkan. Daftar keyword di sini diperbarui ketika "
+"setiap perubahan dibuat dalam kedua mode editor biasa dan tingkat tinggi. "
+"Ini juga mungkin dalam area untuk menghapus secara manual keyword yang tidak "
+"diinginkan menggunakan 'remove selected' button. Keyword ganda bisa dihapus "
+"dalam sebuah pekerjaan dengan :kbd:'Control-clicking' pada masukan keyword "
+"ganda dalam daftar keyword standar kemudian klik :guilabel:`Remove selected`"
 
 # 684c9455f05f4bab828a8c08f9e36e9f
 #: ../../source/user-docs/keywords.rst:252
 msgid "An example of the keywords editor in advanced mode is shown below."
 msgstr ""
+"Contoh dari editor keyword pada mode lanjutan ditunjukkan di bawah ini."
 
 # 0175ce5df35344c39fa947ffcc8f2f9f
 #: ../../source/user-docs/keywords.rst:258
 msgid "Invoking the keywords editor"
-msgstr ""
+msgstr "Meminta editor keyword"
 
 # 72573db464014f75a002bd84a1fee7f7
 #: ../../source/user-docs/keywords.rst:260
@@ -660,6 +668,11 @@ msgid ""
 "you may use the keywords editor icon on the plugins toolbar as illustrated "
 "below."
 msgstr ""
+"Editor keyword dapat dengan mudah diminta dengan **selecting any layer** "
+"pada daftar layer QGIS, dan kemudian gunakan menu plugin untuk memulai "
+"editor (:menuselection:`Plugins --> InaSAFE --> Keyword Editor`). "
+"Alternatifnya, kamu boleh menggunakan ikon editor keyword pada toolbar "
+"plugin seperti diilustrasikan di bawah."
 
 # 88e0d674303b4de6b5c01849459dd5dd
 #: ../../source/user-docs/keywords.rst:270
@@ -667,11 +680,13 @@ msgid ""
 "the keyword editor icon in the toolbar and menus will **be disabbled** and "
 "appear greyed out."
 msgstr ""
+"Ikon editor keyword dalam toolbar dan menu akan **be disabbled* dan muncul "
+"ketika diklik."
 
 # 0a07af78935943abbda80340169558ad
 #: ../../source/user-docs/keywords.rst:274
 msgid "Saving your edits"
-msgstr ""
+msgstr "Menyimpan editan Anda"
 
 # 43a16c60196244fcbe3b27a9ba3914b8
 #: ../../source/user-docs/keywords.rst:276
@@ -679,11 +694,13 @@ msgid ""
 "To save your keyword edits, simply press the :guilabel:`OK` button and the "
 ".keywords file will be written to disk."
 msgstr ""
+"Untuk menyimpan editan keyword, cukup tekan tombol :guilabel:'OK' dan file "
+"keyword akan tertulis dalam disk."
 
 # d65686483aec470cb12fd8e0f6c2cbf5
 #: ../../source/user-docs/keywords.rst:280
 msgid "Cancelling your edits"
-msgstr ""
+msgstr "Membatalkan editan Anda"
 
 # 9b43059acb79441aaf706cbb6587a1d3
 #: ../../source/user-docs/keywords.rst:282
@@ -692,11 +709,14 @@ msgid ""
 "button. No changes will be written to disk and your .keywords file will "
 "remain in its original state."
 msgstr ""
+"Kamu dapat membatalkan perubahan setiap waktu dengan menekan tombol "
+":guilabel:`Cancel. Tidak ada perubahan akan tertulis dalam disk dan file "
+"keyword akan tetap pada keadaan aslinya."
 
 # 07c9bf340daa441c8d801065819ac213
 #: ../../source/user-docs/keywords.rst:287
 msgid "Keywords for remote and non-file based layers"
-msgstr ""
+msgstr "Keyword untuk layer berbasis remote dan non-file"
 
 # 7130dd681f174cd1b948b48c5e33990c
 #: ../../source/user-docs/keywords.rst:289
@@ -706,6 +726,10 @@ msgid ""
 "keywords will be written to a sqlite database - by default this database is "
 "stored as :file:`keywords.db` within the InaSAFE plugin directory root."
 msgstr ""
+"Jika Anda menggunakan PostgreSQL, WFS, Spatialite atau llainnya berbasis "
+"sumber non-file, Anda masih bisa membuat keyword. Dalam keadaan ini keyword "
+"akan tertulis ke basis data aqlite - secara default basis data ini tersimpan "
+"sebagai :file:'keywords.db' dalam direktori root plugin InaSAFE."
 
 # 8ece3640fa3849b4adfa1733400aca5d
 #: ../../source/user-docs/keywords.rst:294
@@ -716,6 +740,11 @@ msgid ""
 "toolbar's options icon (as shown below) or by doing :menuselection:`Plugins "
 "--> InaSAFE --> InaSAFE Options`."
 msgstr ""
+"Anda mungkin ingin menggunakan lokasi berbeda untuk :file:'keywords.db' "
+"basis data keyword - Anda dapat mengkonfigurasi menggunakan dialog pilihan "
+"InaSAFE. Dialog pilihan InaSAFE dapat diluncurkan dengan mengklik pada ikon "
+"pilihan plugin toobar (seperti ditunjukkan di bawah) atau dengan "
+":menuselection:`Plugins --> InaSAFE --> InaSAFE Options`."
 
 # f2d81bde8ac64c8b8d511f3caa63b3b5
 #: ../../source/user-docs/keywords.rst:303
@@ -724,6 +753,9 @@ msgid ""
 "specified using the :guilabel:`keyword cache for remote datasources` option "
 "as shown below."
 msgstr ""
+"Ketika dialog pilihan terbuka, pola basis data keyword bisa dispesifikasi "
+"menggunakan pilihan :guilabel:`keyword cache for remote datasources`seperti "
+"ditunjukkan di bawah."
 
 # 8dda0002c8b44ad59d564c34b5eb0ff9
 #: ../../source/user-docs/keywords.rst:310
@@ -735,6 +767,12 @@ msgid ""
 "URI for the datasource (typically the database connection details) and a "
 "blob which contains the keywords as a pickled python dictionary."
 msgstr ""
+"(1) Menunjang untuk layer remote dan non-file yang ditambahkan pada InaSAFE "
+"versi 0.3. (2) Basis data dapat dibuka menggunakan editor sqlite seperti "
+"sqliteman, tapi data pada tabel keyword tidak dimaksudkan dapat dibaca atau "
+"diedit oleh manusia. Tabel kolom terdiri dari campuran basis MD5 pada URI "
+"untuk sumber data (khususnya detil koneksi basis data) dan gumpalan yang "
+"memuat keyword seperti dipilih pada kamus python."
 
 # 96b493b8bbd244f2a99936cecfd90206
 #: ../../source/user-docs/keywords.rst:318
@@ -742,11 +780,13 @@ msgid ""
 "See the :doc:`options` document for more information about the InaSAFE "
 "options dialog."
 msgstr ""
+"Lihat :doc:`options`dokumen untuk informasi lebih mengenai dialog pilihan "
+"InaSAFE."
 
 # 3a1fe201c74d478c84a238b48a852103
 #: ../../source/user-docs/keywords.rst:322
 msgid "Sharing your keywords cache"
-msgstr ""
+msgstr "Berbagi cache keyword Anda"
 
 # bf3436b812534a099922573e388f77d4
 #: ../../source/user-docs/keywords.rst:324
@@ -756,11 +796,15 @@ msgid ""
 "that the layer URI hashes need to be identical in order for a layer's "
 "keyword to be found. This means that, for (contrived), example::"
 msgstr ""
+"Dalam teori Anda bisa menempatkan file keyword dalam jaringan dan membuat "
+"tempat penyimpanan keyword berbagi pada lingkungan multi-user, tapi Anda "
+"harus catat bahwa campuran layer URI harus serupa urutannya untuk keyword "
+"layer agar dapat ditemukan. Ini berarti, untuk (dibuat-buat), contoh::"
 
 # 98f36fbe3f9b409b84f5ca1a56b83993
 #: ../../source/user-docs/keywords.rst:331
 msgid "would not be considered the same as::"
-msgstr ""
+msgstr "Tidak akan dianggap sama sebagai::"
 
 # fb3fcdb250c54cab814cd7d39b2e1b62
 #: ../../source/user-docs/keywords.rst:335
@@ -769,6 +813,9 @@ msgid ""
 "around this you could create a common account so that every user will "
 "effectively use the same URI to load that layer e.g.::"
 msgstr ""
+"Karena mandat pengguna berbeda, menghasilkan URI yang bebeda juga. Untuk "
+"bekerja di sekitar ini, Anda bisa membuat akun umum sehingga tiap pengguna "
+"dapat menggunakan URI yang sama untuk membuka layer secara efektif contoh::"
 
 # f0cd494c80a14706a2daacf7c0a602b5
 #: ../../source/user-docs/keywords.rst:341
@@ -780,6 +827,12 @@ msgid ""
 "data to the same place. Under Unix like operating systems this could look "
 "something like this::"
 msgstr ""
+"Untuk sumber tertentu (contoh cakupan ArcInfo, basis data Spatialite) dimana "
+"cache keyword juga digunakan, kamu harus memperhatikan penggunaan titik "
+"puncak umum atau jaringan berbagi untuk mengakses data jika Anda ingin "
+"sukses mendapatkan cache dengan URI layer. Sebagai contoh Anda dapat "
+"memiliki semua pucak pengguna data Anda pada tempat yang sama. Di bawah Unix "
+"seperti sistem operasi hal ini dapat terlihat seperti berikut::"
 
 # 5afb0ddd5716445689d26605df651395
 #: ../../source/user-docs/keywords.rst:350
@@ -787,11 +840,13 @@ msgid ""
 "Under Windows you could always the same drive letter and path the to share "
 "e.g.::"
 msgstr ""
+"Dalam windows Anda selalu dapat huruf penggerak dan pola yang sama untuk "
+"berbagi contoh::"
 
 # 7c295d73e28d4e4386e8e5ed08e337cd
 #: ../../source/user-docs/keywords.rst:357
 msgid "Getting help"
-msgstr ""
+msgstr "Mendapatkan bantuan"
 
 # 71b2d69a127c48fa9a29e576cb1d458d
 #: ../../source/user-docs/keywords.rst:359
@@ -800,3 +855,5 @@ msgid ""
 ":guilabel:`Help` button at the bottom of the dialog and this page will be "
 "displayed."
 msgstr ""
+"Jika Anda memerlukan bantuan menggunakan editor, Anda dapat mengklik tombol "
+":guilabel:`Help`pada dialog di bawah dan halaman ini akan ditampilkan."
