@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 InaSAFE Disaster risk assessment tool developed by AusAid and World Bank
 - **Functionality related to shake data files.**
@@ -25,19 +26,24 @@ from zipfile import BadZipfile
 
 from ftp_client import FtpClient
 from sftp_client import SFtpClient
-from realtime.utils import setupLogger, dataDir, is_event_id
-from realtime.shake_event import ShakeEvent
+from utils import setupLogger, dataDir, is_event_id
+from shake_event import ShakeEvent
 # Loading from package __init__ not working in this context so manually doing
 setupLogger()
 LOGGER = logging.getLogger('InaSAFE')
 
 
 def processEvent(theEventId=None, theLocale='en'):
-    """Launcher that actually runs the event processing."""
-    myPopulationPath = os.path.join(dataDir(),
-                          'exposure',
-                          'IDN_mosaic',
-                          'popmap10_all.tif')
+    """Launcher that actually runs the event processing.
+    :param theEventId: The event id to process. If None the latest event will
+       be downloaded and processed.
+    :param theLocale:
+    """
+    myPopulationPath = os.path.join(
+        dataDir(),
+        'exposure',
+        'IDN_mosaic',
+        'popmap10_all.tif')
 
     # Use cached data where available
     # Whether we should always regenerate the products
@@ -56,27 +62,32 @@ def processEvent(theEventId=None, theLocale='en'):
     # Now generate the products
     for myLoc in myLocaleList:
         # Extract the event
+        # noinspection PyBroadException
         try:
             if os.path.exists(myPopulationPath):
-                myShakeEvent = ShakeEvent(theEventId=theEventId,
-                                      theLocale=myLoc,
-                                      theForceFlag=myForceFlag,
-                                      thePopulationRasterPath=myPopulationPath)
+                myShakeEvent = ShakeEvent(
+                    theEventId=theEventId,
+                    theLocale=myLoc,
+                    theForceFlag=myForceFlag,
+                    thePopulationRasterPath=myPopulationPath)
             else:
-                myShakeEvent = ShakeEvent(theEventId=theEventId,
-                                      theLocale=myLoc,
-                                      theForceFlag=myForceFlag)
+                myShakeEvent = ShakeEvent(
+                    theEventId=theEventId,
+                    theLocale=myLoc,
+                    theForceFlag=myForceFlag)
         except (BadZipfile, URLError):
             # retry with force flag true
             if os.path.exists(myPopulationPath):
-                myShakeEvent = ShakeEvent(theEventId=theEventId,
-                                      theLocale=myLoc,
-                                      theForceFlag=True,
-                                      thePopulationRasterPath=myPopulationPath)
+                myShakeEvent = ShakeEvent(
+                    theEventId=theEventId,
+                    theLocale=myLoc,
+                    theForceFlag=True,
+                    thePopulationRasterPath=myPopulationPath)
             else:
-                myShakeEvent = ShakeEvent(theEventId=theEventId,
-                                      theLocale=myLoc,
-                                      theForceFlag=True)
+                myShakeEvent = ShakeEvent(
+                    theEventId=theEventId,
+                    theLocale=myLoc,
+                    theForceFlag=True)
         except:
             LOGGER.exception('An error occurred setting up the shake event.')
             return
@@ -121,6 +132,7 @@ elif len(sys.argv) == 2:
             myEvent = myEvent.replace('ftp://118.97.83.243/', '')
             myEvent = myEvent.replace('.out.zip', '')
             print 'Processing %s' % myEvent
+            # noinspection PyBroadException
             try:
                 processEvent(myEvent, myLocale)
             except:  # pylint: disable=W0702
@@ -132,6 +144,7 @@ elif len(sys.argv) == 2:
 else:
     myEventId = None
     print('Processing latest shakemap')
+    # noinspection PyBroadException
     try:
         processEvent(theLocale=myLocale)
     except:  # pylint: disable=W0702

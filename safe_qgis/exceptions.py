@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 InaSAFE Disaster risk assessment tool developed by AusAid -
 **Exception Classes.**
@@ -28,8 +29,8 @@ class InvalidClipGeometryError(Exception):
     pass
 
 
-class QgisPathError(Exception):
-    """Custom exception for when qgispath.txt could not be read."""
+class FileNotFoundError(Exception):
+    """Custom exception for when a file could not be found."""
     pass
 
 
@@ -71,8 +72,14 @@ class StyleInfoNotFoundError(Exception):
 
 
 class InvalidParameterError(Exception):
-    """Custom exception for when an invalid parameter is
-    passed to a function."""
+    """Custom exception for when an invalid parameter is passed to a function.
+    """
+    pass
+
+
+class NoKeywordsFoundError(Exception):
+    """Custom exception for when no keywords exist for a layer.
+    """
     pass
 
 
@@ -142,4 +149,44 @@ class MethodUnavailableError(Exception):
 class CallGDALError(Exception):
     """Raised if failed to call gdal command. Indicate by error message that is
     not empty"""
+    pass
+
+
+class ImportDialogError(Exception):
+    """Raised if import process failed."""
+    pass
+
+
+class CanceledImportDialogError(Exception):
+    """Raised if import process canceled"""
+    pass
+
+
+class InvalidAggregatorError(Exception):
+    """Raised if aggregator state is not valid when trying to run it."""
+    pass
+
+
+class AggregatioError(Exception):
+    """Raised if aggregator state is not valid when trying to run it."""
+    pass
+
+
+class HelpFileMissingError(Exception):
+    """Raised if a help file cannot be found."""
+    pass
+
+
+class InvalidGeometryError(Exception):
+    """Custom exception for when a feature geometry is invalid or none."""
+    pass
+
+
+class UnsupportedProviderError(Exception):
+    """For unsupported provider (e.g. openlayers plugin) encountered."""
+    pass
+
+
+class InvalidLayerError(Exception):
+    """For when an invalid layer is encountered."""
     pass

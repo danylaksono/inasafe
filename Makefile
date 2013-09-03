@@ -1,4 +1,4 @@
-#/***************************************************************************
+#d202e28d4594ac2bc/***************************************************************************
 #
 # InaSAFE Disaster risk assessment tool developed by AusAid and World Bank
 #                             -------------------
@@ -35,17 +35,8 @@ compile:
 	@echo "-----------------"
 	make -C safe_qgis
 
-docs: compile gen_impact_function_doc gen_rst
-	@echo
-	@echo "-------------------------------"
-	@echo "Compile documentation into html"
-	@echo "-------------------------------"
-	scripts/post_translate.sh >/dev/null
-
 #Qt .ts file updates - run to register new strings for translation in safe_qgis
 update-translation-strings: compile
-        #update sphinx docs strings
-	@scripts/pre_translate.sh $(LOCALES)
         #update application strings
 	@echo "Checking current translation."
 	@scripts/update-strings.sh $(LOCALES)
@@ -55,8 +46,7 @@ compile-translation-strings: compile
 	@#compile gettext messages binary
 	$(foreach LOCALE, $(LOCALES), msgfmt --statistics -o safe/i18n/$(LOCALE)/LC_MESSAGES/inasafe.mo safe/i18n/$(LOCALE)/LC_MESSAGES/inasafe.po;)
 	@#Compile qt messages binary
-	cd safe_qgis; lrelease inasafe.pro; cd ..
-	# For sphinx docs this step is done as part of make docs target
+	cd safe_qgis; lrelease-qt4 inasafe.pro; cd ..
 
 test-translations:
 	@echo
@@ -99,13 +89,13 @@ clean:
 	@-/bin/rm .coverage 2>/dev/null || true
 
 # Run the test suite followed by style checking
-test: clean docs test_suite pep8 pylint dependency_test unwanted_strings run_data_audit testdata_errorcheck test-translations
+test: clean test_suite pep8 pylint dependency_test unwanted_strings run_data_audit testdata_errorcheck test-translations
 
 # Run the test suite for gui only
 guitest: gui_test_suite pep8 disabled_tests dependency_test unwanted_strings testdata_errorcheck
 
 # Run the test suite followed by style checking includes realtime and requires QGIS 2.0
-qgis2test: clean docs qgis2_test_suite pep8 pylint dependency_test unwanted_strings run_data_audit testdata_errorcheck test-translations
+qgis2test: clean qgis2_test_suite pep8 pylint dependency_test unwanted_strings run_data_audit testdata_errorcheck test-translations
 
 quicktest: test_suite_quick pep8 pylint dependency_test unwanted_strings run_data_audit test-translations
 
@@ -119,7 +109,7 @@ pep8:
 	@echo "-----------"
 	@echo "PEP8 issues"
 	@echo "-----------"
-	@pep8 --repeat --ignore=E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude docs,pydev,third_party,keywords_dialog_base.py,dock_base.py,options_dialog_base.py,resources.py,resources_rc.py,help_base.py,xml_tools.py,system_tools.py,data_audit.py,data_audit_wrapper.py,impact_functions_doc_base.py,configurable_impact_functions_dialog_base.py,function_options_dialog_base.py,minimum_needs_base.py . || true
+	@pep8 --repeat --ignore=E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude pydev,third_party,keywords_dialog_base.py,dock_base.py,options_dialog_base.py,resources_rc.py,help_base.py,xml_tools.py,system_tools.py,data_audit.py,data_audit_wrapper.py,function_browser_base.py,function_options_dialog_base.py,minimum_needs_base.py,shakemap_importer_base.py,batch_dialog_base.py,osm_downloader_base.py . || true
 
 # Run entire test suite - excludes realtime until we have QGIS 2.0 support
 test_suite: compile testdata
@@ -137,6 +127,15 @@ test_suite: compile testdata
 	@# Report expected failures if any!
 	@#echo Expecting 1 test to fail in support of issue #3
 	@#echo Expecting 1 test to fail in support of issue #160
+
+# Run safe package tests only
+safe_test_suite: compile testdata
+	@echo
+	@echo "---------------------"
+	@echo "Safe Regression Test Suite"
+	@echo "---------------------"
+	@-export PYTHONPATH=`pwd`:$(PYTHONPATH); nosetests -v --with-id \
+	--with-coverage --cover-package=safe safe  3>&1 1>&2 2>&3 3>&- || true
 
 # Run gui test suite only
 gui_test_suite: compile testdata
@@ -182,7 +181,7 @@ testdata:
 	@echo "Updating inasafe_data - public test and demo data repository"
 	@echo "Update the hash to check out a specific data version        "
 	@echo "------------------------------------------------------------"
-	@scripts/update-test-data.sh 8565d4017e4f6bad38345f1b10754a9d329f4c97 2>&1 | tee tmp_warnings.txt; [ $${PIPESTATUS[0]} -eq 0 ] && rm -f tmp_warnings.txt || echo "Stored update warnings in tmp_warnings.txt";
+	@scripts/update-test-data.sh b4db5177d1454ceeeac1b86fbc404d671d8305e5 2>&1 | tee tmp_warnings.txt; [ $${PIPESTATUS[0]} -eq 0 ] && rm -f tmp_warnings.txt || echo "Stored update warnings in tmp_warnings.txt";
 
 #check and show if there was an error retrieving the test data
 testdata_errorcheck:
@@ -197,15 +196,20 @@ disabled_tests:
 	@echo "--------------"
 	@echo "Disabled tests"
 	@echo "--------------"
-	@grep -R Xtest * | grep ".py:" | grep -v "docs/build/html" || true
+	@grep -R [X,x]test * | grep ".py:" || true
 
 unwanted_strings:
 	@echo
 	@echo "------------------------------"
 	@echo "Strings that should be deleted"
 	@echo "------------------------------"
-	@grep -R "settrace()" * | grep ".py:" | grep -v Makefile || true
-	@grep -R "assert " * | grep ".py:" | grep -v Makefile | grep -v test_ | grep -v utilities_test.py | grep -v odict.py || true
+
+	@grep -R "settrace()" * | grep ".py:" | grep -v Makefile | grep -v pydev || true
+
+	@grep -R "assert " * | grep ".py:" | grep -v Makefile | grep -v test_ | \
+	grep -v utilities_for_testing.py | grep -v odict.py | grep -v .pyc | \
+	grep -v gui_example.py | grep -v message_element.py | grep -v pydev | \
+	grep -v third_party || true
 
 dependency_test:
 	@echo
@@ -219,7 +223,7 @@ dependency_test:
 	@# 1
 	@# See http://stackoverflow.com/questions/4761728/gives-an-error-in-makefile-not-in-bash-when-grep-output-is-empty why we need "|| true"
 
-	@grep -R PyQt4 $(NONGUI) || true
+	@grep -R PyQt4 $(NONGUI) | grep -v gui_example.py | grep -v message_element|| true
 	@grep -R qgis.core $(NONGUI) || true
 	@grep -R "import scipy" $(NONGUI) || true
 	@grep -R "from scipy import" $(NONGUI) || true
@@ -245,22 +249,6 @@ run_data_audit:
 	@echo "Audit of IP status for bundled data"
 	@echo "-----------------------------------"
 	@-export PYTHONPATH=`pwd`:$(PYTHONPATH); python scripts/data_IP_audit.py
-
-gen_impact_function_doc:
-	@echo
-	@echo "-----------------------------------"
-	@echo "Generate impact functions' documentation"
-	@echo "-----------------------------------"
-	@-export PYTHONPATH=`pwd`:$(PYTHONPATH); python scripts/gen_impfunc_doc.py
-	@echo $(PYTHONPATH)
-
-gen_rst:
-	@echo
-	@echo "-----------------------------------"
-	@echo "Generate InaSAFE API documentation"
-	@echo "-----------------------------------"
-	@-export PYTHONPATH=`pwd`:$(PYTHONPATH); python scripts/gen_rst_script.py
-	@echo $(PYTHONPATH)
 
 pylint-count:
 	@echo
@@ -298,6 +286,7 @@ indent:
 	@echo "---------------"
 	@# sudo apt-get install python2.7-examples for reindent script
 	python /usr/share/doc/python2.7/examples/Tools/scripts/reindent.py *.py
+
 ##########################################################
 #
 # Make targets specific to Jenkins go below this point
@@ -332,7 +321,7 @@ jenkins-sloccount:
 	@echo " Lines of code analysis for Jenkins"
 	@echo " Generated using David A. Wheeler's 'SLOCCount'"
 	@echo "----------------------"
-	# This line is for machine readble output for use by Jenkins
+	# This line is for machine readable output for use by Jenkins
 	@sloccount --duplicates --wide --details  safe_api.py safe safe_qgis realtime | fgrep -v .svn > sloccount.sc || :
 
 jenkins-pylint:
@@ -353,7 +342,7 @@ jenkins-pep8:
 	@echo "-----------------------------"
 	@echo "PEP8 issue check for Jenkins"
 	@echo "-----------------------------"
-	@pep8 --repeat --ignore=E203 --exclude third_party,docs,odict.py,keywords_dialog_base.py,dock_base.py,options_dialog_base.py,resources.py,resources_rc.py,help_base.py,xml_tools.py,system_tools.py,data_audit.py,data_audit_wrapper.py,impact_functions_doc_base.py,function_options_dialog_base.py,minimum_needs_base.py . > pep8.log || :
+	@pep8 --repeat --ignore=E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude pydev,third_party,keywords_dialog_base.py,dock_base.py,options_dialog_base.py,resources_rc.py,help_base.py,xml_tools.py,system_tools.py,data_audit.py,data_audit_wrapper.py,function_browser_base.py,function_options_dialog_base.py,minimum_needs_base.py,shakemap_importer_base.py,batch_dialog_base.py,osm_downloader_base.py . > pep8.log || :
 
 jenkins-realtime-test:
 
@@ -363,7 +352,7 @@ jenkins-realtime-test:
 	@echo "if you are going to run more than "
 	@echo "one InaSAFE Jenkins job, you should run each on a different"
 	@echo "display by changing the :100 option below to a different number"
-	@echo "Update: Above is taken care of by xvfb jenkins pluging now"
+	@echo "Update: Above is taken care of by xvfb jenkins plugin now"
 	@echo "---------------------------------------------------------------"
 	# xvfb-run --server-args=":101 -screen 0, 1024x768x24" make check
 	@-export PYTHONPATH=`pwd`:$(PYTHONPATH); xvfb-run --server-args="-screen 0, 1024x768x24" \

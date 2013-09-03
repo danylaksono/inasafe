@@ -1,23 +1,35 @@
-from safe.impact_functions.core import (FunctionProvider,
-                                        get_hazard_layer,
-                                        get_exposure_layer,
-                                        get_question)
-from safe.storage.raster import Raster
-from safe.common.utilities import (ugettext as tr,
-                                   get_defaults,
-                                   format_int)
-from safe.common.tables import Table, TableRow
-from safe.common.exceptions import InaSAFEError
-from third_party.odict import OrderedDict
-
+"""Impact function for ITB earth quake fatality model
+"""
 import numpy
+from third_party.odict import OrderedDict
+import logging
+from safe.impact_functions.core import (
+    FunctionProvider,
+    get_hazard_layer,
+    get_exposure_layer,
+    get_question,
+    default_minimum_needs,
+    evacuated_population_weekly_needs)
+from safe.storage.raster import Raster
+from safe.common.utilities import (
+    ugettext as tr,
+    get_defaults,
+    format_int,
+    humanize_class,
+    create_classes,
+    create_label,
+    get_thousand_separator)
+from safe.common.tables import Table, TableRow
+from safe.common.exceptions import InaSAFEError, ZeroImpactException
+
+LOGGER = logging.getLogger('InaSAFE')
 
 
 class ITBFatalityFunction(FunctionProvider):
     """Indonesian Earthquake Fatality Model
 
-    This model was developed by Institut Tecknologi Bandung (ITB) and
-    implemented by Dr Hadi Ghasemi, Geoscience Australia
+    This model was developed by Institut Teknologi Bandung (ITB) and
+    implemented by Dr. Hadi Ghasemi, Geoscience Australia.
 
 
     Reference:
@@ -87,49 +99,51 @@ class ITBFatalityFunction(FunctionProvider):
     """
 
     title = tr('Die or be displaced')
-    synopsis = tr('To asses the impact of earthquake on population based on '
-                  'earthquake model developed by ITB')
-    citations = \
-        tr(' * Indonesian Earthquake Building-Damage and Fatality Models and '
-           '   Post Disaster Survey Guidelines Development Bali, 27-28 '
-           '   February 2012, 54pp.\n'
-           ' * Allen, T. I., Wald, D. J., Earle, P. S., Marano, K. D., '
-           '   Hotovec, A. J., Lin, K., and Hearne, M., 2009. An Atlas '
-           '   of ShakeMaps and population exposure catalog for '
-           '   earthquake loss modeling, Bull. Earthq. Eng. 7, 701-718.\n'
-           ' * Jaiswal, K., and Wald, D., 2010. An empirical model for '
-           '   global earthquake fatality estimation, Earthq. Spectra '
-           '   26, 1017-1037.\n')
-    limitation = \
-        tr(' - The model is based on limited number of observed fatality '
-           '   rates during 4 past fatal events. \n'
-           ' - The model clearly over-predicts the fatality rates at '
-           '   intensities higher than VIII.\n'
-           ' - The model only estimates the expected fatality rate '
-           '   for a given intensity level; however the associated '
-           '   uncertainty for the proposed model is not addressed.\n'
-           ' - There are few known mistakes in developing the current '
-           '   model:\n\n'
-           '   * rounding MMI values to the nearest 0.5,\n'
-           '   * Implementing Finite-Fault models of candidate events, and\n'
-           '   * consistency between selected GMPEs with those in use by '
-           '     BMKG.\n')
-    actions = tr('Provide details about the population will be die or '
-                 'displaced')
-    detailed_description = \
-        tr('This model was developed by Institut Tecknologi Bandung (ITB) '
-           'and implemented by Dr Hadi Ghasemi, Geoscience Australia\n'
-           'Algorithm:\n'
-           'In this study, the same functional form as Allen (2009) is '
-           'adopted o express fatality rate as a function of intensity '
-           '(see Eq. 10 in the report). The Matlab built-in function '
-           '(fminsearch) for  Nelder-Mead algorithm was used to estimate '
-           'the model parameters. The objective function (L2G norm) that '
-           'is minimized during the optimisation is the same as the one '
-           'used by Jaiswal et al. (2010).\n'
-           'The coefficients used in the indonesian model are x=0.62275231, '
-           'y=8.03314466, zeta=2.15')
+    synopsis = tr(
+        'To asses the impact of earthquake on population based on earthquake '
+        'model developed by ITB')
+    citations = tr(
+        ' * Indonesian Earthquake Building-Damage and Fatality Models and '
+        '   Post Disaster Survey Guidelines Development Bali, 27-28 '
+        '   February 2012, 54pp.\n'
+        ' * Allen, T. I., Wald, D. J., Earle, P. S., Marano, K. D., '
+        '   Hotovec, A. J., Lin, K., and Hearne, M., 2009. An Atlas '
+        '   of ShakeMaps and population exposure catalog for '
+        '   earthquake loss modeling, Bull. Earthq. Eng. 7, 701-718.\n'
+        ' * Jaiswal, K., and Wald, D., 2010. An empirical model for '
+        '   global earthquake fatality estimation, Earthq. Spectra '
+        '   26, 1017-1037.\n')
+    limitation = tr(
+        ' - The model is based on limited number of observed fatality '
+        '   rates during 4 past fatal events. \n'
+        ' - The model clearly over-predicts the fatality rates at '
+        '   intensities higher than VIII.\n'
+        ' - The model only estimates the expected fatality rate '
+        '   for a given intensity level; however the associated '
+        '   uncertainty for the proposed model is not addressed.\n'
+        ' - There are few known mistakes in developing the current '
+        '   model:\n\n'
+        '   * rounding MMI values to the nearest 0.5,\n'
+        '   * Implementing Finite-Fault models of candidate events, and\n'
+        '   * consistency between selected GMPEs with those in use by '
+        '     BMKG.\n')
+    actions = tr(
+        'Provide details about the population will be die or displaced')
+    detailed_description = tr(
+        'This model was developed by Institut Teknologi Bandung (ITB) '
+        'and implemented by Dr. Hadi Ghasemi, Geoscience Australia\n'
+        'Algorithm:\n'
+        'In this study, the same functional form as Allen (2009) is '
+        'adopted o express fatality rate as a function of intensity '
+        '(see Eq. 10 in the report). The Matlab built-in function '
+        '(fminsearch) for  Nelder-Mead algorithm was used to estimate '
+        'the model parameters. The objective function (L2G norm) that '
+        'is minimized during the optimisation is the same as the one '
+        'used by Jaiswal et al. (2010).\n'
+        'The coefficients used in the indonesian model are x=0.62275231, '
+        'y=8.03314466, zeta=2.15')
     defaults = get_defaults()
+
     parameters = OrderedDict([
         ('x', 0.62275231), ('y', 8.03314466),  # Model coefficients
         # Rates of people displaced for each MMI level
@@ -147,13 +161,14 @@ class ITBFatalityFunction(FunctionProvider):
                 'params': OrderedDict([
                     ('youth_ratio', defaults['YOUTH_RATIO']),
                     ('adult_ratio', defaults['ADULT_RATIO']),
-                    ('elder_ratio', defaults['ELDER_RATIO'])])})]))])
+                    ('elder_ratio', defaults['ELDER_RATIO'])])}),
+            ('MinimumNeeds', {'on': True})])),
+        ('minimum needs', default_minimum_needs())])
 
     def fatality_rate(self, mmi):
         """
         ITB method to compute fatality rate
-        :param x: model coefficient.
-        :param y: model coefficient.
+        :param mmi:
         """
         # As per email discussion with Ole, Trevor, Hadi, mmi < 4 will have
         # a fatality rate of 0 - Tim
@@ -167,14 +182,15 @@ class ITBFatalityFunction(FunctionProvider):
     def run(self, layers):
         """Indonesian Earthquake Fatality Model
 
-        Input
-          layers: List of layers expected to contain
-              H: Raster layer of MMI ground shaking
-              P: Raster layer of population density
+        Input:
 
+        :param layers: List of layers expected to contain,
+
+                my_hazard: Raster layer of MMI ground shaking
+
+                my_exposure: Raster layer of population density
         """
 
-        # Define percentages of people being displaced at each mmi level
         displacement_rate = self.parameters['displacement_rate']
 
         # Tolerance for transparency
@@ -189,8 +205,8 @@ class ITBFatalityFunction(FunctionProvider):
                                 self)
 
         # Extract data grids
-        H = intensity.get_data()   # Ground Shaking
-        P = population.get_data(scaling=True)  # Population Density
+        my_hazard = intensity.get_data()   # Ground Shaking
+        my_exposure = population.get_data(scaling=True)  # Population Density
 
         # Calculate population affected by each MMI level
         # FIXME (Ole): this range is 2-9. Should 10 be included?
@@ -200,16 +216,16 @@ class ITBFatalityFunction(FunctionProvider):
         number_of_displaced = {}
         number_of_fatalities = {}
 
-        # Calculate fatality rates for observed Intensity values (H
+        # Calculate fatality rates for observed Intensity values (my_hazard
         # based on ITB power model
-        R = numpy.zeros(H.shape)
+        R = numpy.zeros(my_hazard.shape)
         for mmi in mmi_range:
-
             # Identify cells where MMI is in class i and
             # count population affected by this shake level
             I = numpy.where(
-                (H > mmi - self.parameters['step']) * (
-                    H <= mmi + self.parameters['step']), P, 0)
+                (my_hazard > mmi - self.parameters['step']) * (
+                    my_hazard <= mmi + self.parameters['step']),
+                my_exposure, 0)
 
             # Calculate expected number of fatalities per level
             fatality_rate = self.fatality_rate(mmi)
@@ -221,6 +237,7 @@ class ITBFatalityFunction(FunctionProvider):
                 D = displacement_rate[mmi] * I
             except KeyError, e:
                 msg = 'mmi = %i, I = %s, Error msg: %s' % (mmi, str(I), str(e))
+                # noinspection PyExceptionInherit
                 raise InaSAFEError(msg)
 
             # Adjust displaced people to disregard fatalities.
@@ -234,6 +251,7 @@ class ITBFatalityFunction(FunctionProvider):
             # This is what is used in the real time system exposure table
             number_of_exposed[mmi] = numpy.nansum(I.flat)
             number_of_displaced[mmi] = numpy.nansum(D.flat)
+            # noinspection PyUnresolvedReferences
             number_of_fatalities[mmi] = numpy.nansum(F.flat)
 
         # Set resulting layer to NaN when less than a threshold. This is to
@@ -241,7 +259,7 @@ class ITBFatalityFunction(FunctionProvider):
         R[R < tolerance] = numpy.nan
 
         # Total statistics
-        total = int(round(numpy.nansum(P.flat) / 1000) * 1000)
+        total = int(round(numpy.nansum(my_exposure.flat) / 1000) * 1000)
 
         # Compute number of fatalities
         fatalities = int(round(numpy.nansum(number_of_fatalities.values())
@@ -259,14 +277,12 @@ class ITBFatalityFunction(FunctionProvider):
         table_body = [question]
 
         # Add total fatality estimate
-        #s = str(int(fatalities)).rjust(10)
         s = format_int(fatalities)
         table_body.append(TableRow([tr('Number of fatalities'), s],
                                    header=True))
 
         if self.parameters['calculate_displaced_people']:
             # Add total estimate of people displaced
-            #s = str(int(displaced)).rjust(10)
             s = format_int(displaced)
             table_body.append(TableRow([tr('Number of people displaced'), s],
                                        header=True))
@@ -274,24 +290,19 @@ class ITBFatalityFunction(FunctionProvider):
             displaced = 0
 
         # Add estimate of total population in area
-        #s = str(int(total)).rjust(10)
         s = format_int(int(total))
         table_body.append(TableRow([tr('Total number of people'), s],
                                    header=True))
 
         # Calculate estimated needs based on BNPB Perka 7/2008 minimum bantuan
         # FIXME: Refactor and share
-        rice = int(displaced * 2.8)
-        drinking_water = int(displaced * 17.5)
-        water = int(displaced * 67)
-        family_kits = int(displaced / 5)
-        toilets = int(displaced / 20)
+        minimum_needs = self.parameters['minimum needs']
+        needs = evacuated_population_weekly_needs(displaced, minimum_needs)
 
         # Generate impact report for the pdf map
-        table_body = [question,
-                      TableRow([tr('Fatalities'),
-                                '%s' % format_int(fatalities)],
-                               header=True),
+        table_body = [question, TableRow([tr('Fatalities'),
+                                          '%s' % format_int(fatalities)],
+                                         header=True),
                       TableRow([tr('People displaced'),
                                 '%s' % format_int(displaced)],
                                header=True),
@@ -299,14 +310,14 @@ class ITBFatalityFunction(FunctionProvider):
                                   'displaced population')),
                       TableRow([tr('Needs per week'), tr('Total')],
                                header=True),
-                      [tr('Rice [kg]'), format_int(rice)],
-                      [tr('Drinking Water [l]'), format_int(drinking_water)],
-                      [tr('Clean Water [l]'), format_int(water)],
-                      [tr('Family Kits'), format_int(family_kits)],
-                      [tr('Toilets'), format_int(toilets)]]
-        impact_table = Table(table_body).toNewlineFreeString()
+                      [tr('Rice [kg]'), format_int(needs['rice'])],
+                      [tr('Drinking Water [l]'),
+                       format_int(needs['drinking_water'])],
+                      [tr('Clean Water [l]'), format_int(needs['water'])],
+                      [tr('Family Kits'), format_int(needs[
+                          'family_kits'])],
+                      TableRow(tr('Action Checklist:'), header=True)]
 
-        table_body.append(TableRow(tr('Action Checklist:'), header=True))
         if fatalities > 0:
             table_body.append(tr('Are there enough victim identification '
                                  'units available for %s people?') %
@@ -332,41 +343,58 @@ class ITBFatalityFunction(FunctionProvider):
                            tr('The fatality calculation assumes that '
                               'no fatalities occur for shake levels below 4 '
                               'and fatality counts of less than 50 are '
-                              'disregarded.')])
-
-        # impact_summary = Table(table_body).toNewlineFreeString()
-        # map_title = tr('People in need of evacuation')
+                              'disregarded.'),
+                           tr('All values are rounded up to the nearest '
+                              'integer in order to avoid representing human '
+                              'lives as fractionals.')])
 
         table_body.append(TableRow(tr('Notes'), header=True))
         table_body.append(tr('Fatality model is from '
                              'Institute of Teknologi Bandung 2012.'))
         table_body.append(tr('Population numbers rounded to nearest 1000.'))
 
+        # Result
         impact_summary = Table(table_body).toNewlineFreeString()
         impact_table = impact_summary
-        map_title = tr('Earthquake impact to population')
 
-        # Create style info dynamically
-        classes = numpy.linspace(numpy.nanmin(R.flat[:]),
-                                 numpy.nanmax(R.flat[:]), 5)
+        # check for zero impact
+        if numpy.nanmax(R) == 0 == numpy.nanmin(R):
+            table_body = [
+                question,
+                TableRow([tr('Fatalities'), '%s' % format_int(fatalities)],
+                         header=True)]
+            my_message = Table(table_body).toNewlineFreeString()
+            raise ZeroImpactException(my_message)
 
-        style_classes = [dict(colour='#EEFFEE', quantity=classes[0],
-                              transparency=100,
-                              label=tr('%.2f people/cell') % classes[0]),
-                         dict(colour='#FFFF7F', quantity=classes[1],
-                              transparency=30),
-                         dict(colour='#E15500', quantity=classes[2],
-                              transparency=30,
-                              label=tr('%.2f people/cell') % classes[2]),
-                         dict(colour='#E4001B', quantity=classes[3],
-                              transparency=30),
-                         dict(colour='#730000', quantity=classes[4],
-                              transparency=30,
-                              label=tr('%.2f people/cell') % classes[4])]
+        # Create style
+        colours = ['#EEFFEE', '#FFFF7F', '#E15500', '#E4001B', '#730000']
+        classes = create_classes(R.flat[:], len(colours))
+        interval_classes = humanize_class(classes)
+        style_classes = []
+        for i in xrange(len(colours)):
+            style_class = dict()
+            style_class['label'] = create_label(interval_classes[i])
+            style_class['quantity'] = classes[i]
+            if i == 0:
+                transparency = 100
+            else:
+                transparency = 30
+            style_class['transparency'] = transparency
+            style_class['colour'] = colours[i]
+            style_classes.append(style_class)
+
         style_info = dict(target_field=None,
-                          style_classes=style_classes)
+                          style_classes=style_classes,
+                          style_type='rasterStyle')
 
-        # Create new layer and return
+        # For printing map purpose
+        map_title = tr('Earthquake impact to population')
+        legend_notes = tr('Thousand separator is represented by %s' %
+                          get_thousand_separator())
+        legend_units = tr('(people per cell)')
+        legend_title = tr('Population density')
+
+        # Create raster object and return
         L = Raster(R,
                    projection=population.get_projection(),
                    geotransform=population.get_geotransform(),
@@ -377,9 +405,11 @@ class ITBFatalityFunction(FunctionProvider):
                              'exposed_per_mmi': number_of_exposed,
                              'displaced_per_mmi': number_of_displaced,
                              'impact_table': impact_table,
-                             'map_title': map_title},
-                   name=tr('Estimated displaced population'),
+                             'map_title': map_title,
+                             'legend_notes': legend_notes,
+                             'legend_units': legend_units,
+                             'legend_title': legend_title},
+                   name=tr('Estimated displaced population per cell'),
                    style_info=style_info)
 
-        # Maybe return a shape file with contours instead
         return L

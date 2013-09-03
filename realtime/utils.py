@@ -20,7 +20,7 @@ __copyright__ = ('Copyright 2012, Australia Indonesia Facility for '
 import os
 import shutil
 from datetime import datetime
-from safe_qgis.utilities import setupLogger as setupLoggerSQ
+from safe_qgis.utilities.custom_logging import setup_logger as setupLoggerSQ
 
 
 def baseDataDir():
@@ -36,8 +36,8 @@ def baseDataDir():
 
 def dataDir():
     """Return the path to the standard data dir for e.g. geonames data"""
-    myDir = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                         'fixtures'))
+    myDir = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), 'fixtures'))
     mkDir(myDir)
     return myDir
 
@@ -113,9 +113,10 @@ def setupLogger():
     http://docs.python.org/howto/logging-cookbook.html
     """
     myLogFile = os.path.join(logDir(), 'realtime.log')
-    mySentryUrl = ('http://fda607badbe440be9a2fa6b22e759c72'
-            ':5e871adb47ac4da1a1114b912deb274a@sentry.linfiniti.com/2')
-    setupLoggerSQ(theSentryUrl=mySentryUrl, theLogFile=myLogFile)
+    mySentryUrl = (
+        'http://fda607badbe440be9a2fa6b22e759c72'
+        ':5e871adb47ac4da1a1114b912deb274a@sentry.linfiniti.com/2')
+    setupLoggerSQ(log_file=myLogFile, sentry_url=mySentryUrl)
 
 
 def is_event_id(eventid):

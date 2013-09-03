@@ -1,3 +1,4 @@
+# coding=utf-8
 """InaSAFE Disaster risk assessment tool developed by AusAid -
 **IS Safe Interface.**
 
@@ -28,41 +29,70 @@ import logging
 
 # SAFE functionality - passed on to QGIS modules
 # pylint: disable=W0611
-from safe.api import (get_admissible_plugins,
-                      get_function_title,
-                      get_plugins as safe_get_plugins,
-                      read_keywords, bbox_intersection,
-                      write_keywords as safe_write_keywords,
-                      read_layer as safe_read_layer,
-                      buffered_bounding_box,
-                      verify as verify_util,
-                      VerificationError,
-                      InaSAFEError,
-                      temp_dir,
-                      unique_filename,
-                      safe_tr as safeTr,
-                      get_free_memory,
-                      calculate_impact as safe_calculate_impact,
-                      BoundingBoxError,
-                      ReadLayerError,
-                      get_plugins, get_version,
-                      in_and_outside_polygon as points_in_and_outside_polygon,
-                      calculate_polygon_centroid,
-                      get_postprocessors,
-                      get_postprocessor_human_name,
-                      format_int)
 
-from safe.defaults import DEFAULTS
+# We want all these imports as they for part of the API wrapper used by other
+# modules in safe_qgis
+# noinspection PyUnresolvedReferences
+from safe.api import (
+    load_plugins,
+    get_admissible_plugins,
+    get_function_title,
+    get_plugins as safe_get_plugins,
+    read_keywords, bbox_intersection,
+    write_keywords as safe_write_keywords,
+    read_layer as safe_read_layer,
+    buffered_bounding_box,
+    verify as verify_util,
+    VerificationError,
+    InaSAFEError,
+    temp_dir,
+    unique_filename,
+    safe_tr as safeTr,
+    get_free_memory,
+    calculate_impact as safe_calculate_impact,
+    BoundingBoxError,
+    GetDataError,
+    ReadLayerError,
+    get_plugins, get_version,
+    in_and_outside_polygon as points_in_and_outside_polygon,
+    calculate_polygon_centroid,
+    get_postprocessors,
+    get_postprocessor_human_name,
+    convert_mmi_data,
+    format_int,
+    get_unique_values,
+    get_plugins_as_table,
+    evacuated_population_weekly_needs,
+    Vector,
+    Raster,
+    nan_allclose,
+    DEFAULTS,
+    messaging,
+    DYNAMIC_MESSAGE_SIGNAL,
+    STATIC_MESSAGE_SIGNAL,
+    ERROR_MESSAGE_SIGNAL,
+    ErrorMessage,
+    ZeroImpactException,
+    PointsInputError)
+# noinspection PyUnresolvedReferences
+from safe.api import styles
+# hack for excluding test-related import in builded package
+try:
+    from safe.api import (
+        HAZDATA, EXPDATA, TESTDATA, UNITDATA, BOUNDDATA)
+except ImportError:
+    pass
 # pylint: enable=W0611
 
 # InaSAFE GUI specific functionality
 from PyQt4.QtCore import QCoreApplication
-from safe_qgis.exceptions import (KeywordNotFoundError,
-                                  StyleInfoNotFoundError,
-                                  InvalidParameterError,
-                                  InsufficientOverlapError)
+from safe_qgis.exceptions import (
+    KeywordNotFoundError,
+    StyleInfoNotFoundError,
+    InvalidParameterError,
+    InsufficientOverlapError,
+    NoKeywordsFoundError)
 
-from safe.common.exceptions import BoundingBoxError, ReadLayerError
 LOGGER = logging.getLogger('InaSAFE')
 
 
@@ -99,9 +129,10 @@ def verify(theStatement, theMessage=None):
         raise
 
 
-def getOptimalExtent(theHazardGeoExtent,
-                     theExposureGeoExtent,
-                     theViewportGeoExtent=None):
+def getOptimalExtent(
+        theHazardGeoExtent,
+        theExposureGeoExtent,
+        theViewportGeoExtent=None):
     """ A helper function to determine what the optimal extent is.
     Optimal extent should be considered as the intersection between
     the three inputs. The inasafe library will perform various checks
@@ -144,7 +175,7 @@ def getOptimalExtent(theHazardGeoExtent,
     #
     myMessage = tr('theHazardGeoExtent or theExposureGeoExtent cannot be None.'
                    'Found: /ntheHazardGeoExtent: %s '
-                    '/ntheExposureGeoExtent: %s' %
+                   '/ntheExposureGeoExtent: %s' %
                    (theHazardGeoExtent, theExposureGeoExtent))
 
     if (theHazardGeoExtent is None) or (theExposureGeoExtent is None):
@@ -152,13 +183,15 @@ def getOptimalExtent(theHazardGeoExtent,
 
     # .. note:: The bbox_intersection function below assumes that
     #           all inputs are in EPSG:4326
-    myOptimalExtent = bbox_intersection(theHazardGeoExtent,
-        theExposureGeoExtent,
-        theViewportGeoExtent)
+    myOptimalExtent = \
+        bbox_intersection(theHazardGeoExtent,
+                          theExposureGeoExtent,
+                          theViewportGeoExtent)
 
     if myOptimalExtent is None:
         # Bounding boxes did not overlap
-        myMessage = tr('Bounding boxes of hazard data, exposure data '
+        myMessage = \
+            tr('Bounding boxes of hazard data, exposure data '
                'and viewport did not overlap, so no computation was '
                'done. Please make sure you pan to where the data is and '
                'that hazard and exposure data overlaps.')
@@ -181,8 +214,8 @@ def getBufferedExtent(theGeoExtent, theCellSize):
         Adjusted bounding box
 
     Raises:
-
         Any exceptions are propogated
+
     Note: See docstring for underlying function buffered_bounding_box
           for more details.
     """
@@ -251,17 +284,19 @@ def readKeywordsFromLayer(theLayer, keyword):
     try:
         myValue = theLayer.get_keywords(keyword)
     except Exception, e:
-        myMessage = tr('Keyword retrieval failed for %s (%s) \n %s' % (
+        myMessage = \
+            tr('Keyword retrieval failed for %s (%s) \n %s' % (
                 theLayer.get_filename(), keyword, str(e)))
         raise KeywordNotFoundError(myMessage)
     if not myValue or myValue == '':
-        myMessage = tr('No value was found for keyword %s in layer %s' % (
-                    theLayer.get_filename(), keyword))
+        myMessage = \
+            tr('No value was found for keyword %s in layer %s' % (
+                theLayer.get_filename(), keyword))
         raise KeywordNotFoundError(myMessage)
     return myValue
 
 
-def readKeywordsFromFile(theLayerPath, theKeyword=None):
+def read_file_keywords(theLayerPath, theKeyword=None):
     """Get metadata from the keywords file associated with a local
      file in the file system.
 
@@ -284,6 +319,8 @@ def readKeywordsFromFile(theLayerPath, theKeyword=None):
 
     Raises:
        KeywordNotFoundError if the keyword is not recognised.
+       NoKeywordsFoundError if no keyword file exists.
+       InvalidParameterError if the layer does not exist.
     """
     # check the source layer path is valid
     if not os.path.isfile(theLayerPath):
@@ -296,14 +333,15 @@ def readKeywordsFromFile(theLayerPath, theKeyword=None):
     myKeywordFilePath += '.keywords'
     if not os.path.isfile(myKeywordFilePath):
         myMessage = tr('No keywords file found for %s' % myKeywordFilePath)
-        raise InvalidParameterError(myMessage)
+        raise NoKeywordsFoundError(myMessage)
 
     # now get the requested keyword using the inasafe library
     myDictionary = None
     try:
         myDictionary = read_keywords(myKeywordFilePath)
     except Exception, e:
-        myMessage = tr('Keyword retrieval failed for %s (%s) \n %s' % (
+        myMessage = \
+            tr('Keyword retrieval failed for %s (%s) \n %s' % (
                 myKeywordFilePath, theKeyword, str(e)))
         raise KeywordNotFoundError(myMessage)
 
@@ -311,8 +349,9 @@ def readKeywordsFromFile(theLayerPath, theKeyword=None):
     if theKeyword is None:
         return myDictionary
     if not theKeyword in myDictionary:
-        myMessage = tr('No value was found in file %s for keyword %s' % (
-                    myKeywordFilePath, theKeyword))
+        myMessage = \
+            tr('No value was found in file %s for keyword %s' % (
+                myKeywordFilePath, theKeyword))
         raise KeywordNotFoundError(myMessage)
 
     try:
@@ -364,19 +403,22 @@ def getStyleInfo(theLayer):
         raise InvalidParameterError()
 
     if not hasattr(theLayer, 'get_style_info'):
-        myMessage = tr('Argument "%s" was not a valid layer instance' %
+        myMessage = \
+            tr('Argument "%s" was not a valid layer instance' %
                theLayer)
         raise StyleInfoNotFoundError(myMessage)
 
     try:
         myValue = theLayer.get_style_info()
     except Exception, e:
-        myMessage = tr('Styleinfo retrieval failed for %s\n %s' % (
-                    theLayer.get_filename(), str(e)))
+        myMessage = \
+            tr('Styleinfo retrieval failed for %s\n %s' % (
+                theLayer.get_filename(), str(e)))
         raise StyleInfoNotFoundError(myMessage)
 
     if not myValue or myValue == '':
-        myMessage = tr('No styleInfo was found for layer %s' % (
+        myMessage = \
+            tr('No styleInfo was found for layer %s' % (
                 theLayer.get_filename()))
         raise StyleInfoNotFoundError(myMessage)
     return myValue
@@ -418,28 +460,6 @@ def getSafeImpactFunctions(theFunction=None):
     """
     try:
         return safe_get_plugins(makeAscii(theFunction))
-    except:
-        raise
-
-
-def getFunctionTitle(theFunction):
-    """Thin wrapper around the safe get_function_title.
-
-    Args:
-        * theFunction - SAFE impact function instance to be used
-    Returns:
-        The title of a safe impact function is returned
-    Raises:
-        Any exceptions are propogated
-    """
-
-    # FIXME (Ole): I don't think we have to do try-except-raise.
-    #              It would be the same just to call the function
-    #              and let Python's normal exception handling
-    #              propagate exceptions (just saving some lines and
-    #              complexity)
-    try:
-        return get_function_title(theFunction)
     except:
         raise
 

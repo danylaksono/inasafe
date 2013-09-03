@@ -17,21 +17,27 @@ __date__ = '2/08/2012'
 __copyright__ = ('Copyright 2012, Australia Indonesia Facility for '
                  'Disaster Reduction')
 
-import ogr
 import os
 import shutil
 import unittest
 import logging
 import difflib
+
+import ogr
 import PyQt4
-from qgis.core import QgsFeature
+
+# pylint: disable=E0611
+# pylint: disable=W0611
+from qgis.core import QgsFeatureRequest
+# pylint: enable=E0611
+# pylint: enable=W0611
 from safe.api import unique_filename, temp_dir
-from safe_qgis.utilities_test import getQgisTestApp
+from safe_qgis.utilities.utilities_for_testing import get_qgis_app
 from utils import shakemapExtractDir, shakemapZipDir, dataDir
 from shake_event import ShakeEvent
 # The logger is intialised in utils.py by init
 LOGGER = logging.getLogger('InaSAFE')
-QGISAPP, CANVAS, IFACE, PARENT = getQgisTestApp()
+QGISAPP, CANVAS, IFACE, PARENT = get_qgis_app()
 
 
 class TestShakeEvent(unittest.TestCase):
@@ -113,23 +119,23 @@ day: 26
 month: 7
 year: 2012
 time: None
-timeZone: WIB
-xMinimum: 122.45
-xMaximum: 126.45
-yMinimum: -2.21
-yMaximum: 1.79
+time_zone: WIB
+x_minimum: 122.45
+x_maximum: 126.45
+y_minimum: -2.21
+y_maximum: 1.79
 rows: 161.0
 columns: 161.0
-mmiData: Populated
+mmi_data: Populated
 populationRasterPath: None
-impactFile: None
-impactKeywordsFile: None
-fatalityCounts: None
-displacedCounts: None
-affectedCounts: None
-extentWithCities: Not set
-zoomFactor: 1.25
-searchBoxes: None
+impact_file: None
+impact_keywords_file: None
+fatality_counts: None
+displaced_counts: None
+affected_counts: None
+extent_with_cities: Not set
+zoom_factor: 1.25
+search_boxes: None
 """
         myState = str(myShakeEvent)
         myMessage = (('Expected:\n----------------\n%s'
@@ -196,17 +202,16 @@ searchBoxes: None
         myCitiesLayer = myShakeEvent.localCitiesMemoryLayer()
         myProvider = myCitiesLayer.dataProvider()
 
-        myFeature = QgsFeature()
-        myAttributes = myProvider.attributeIndexes()
-        myProvider.select(myAttributes)
         myExpectedFeatureCount = 6
         self.assertEquals(myProvider.featureCount(), myExpectedFeatureCount)
         myStrings = []
-        while myProvider.nextFeature(myFeature):
+        myRequest = QgsFeatureRequest()
+        for myFeature in myCitiesLayer.getFeatures(myRequest):
             # fetch map of attributes
-            myAttributes = myFeature.attributeMap()
-            for (myKey, myValue) in myAttributes.iteritems():
-                myStrings.append("%d: %s\n" % (myKey, myValue.toString()))
+            myAttributes = myCitiesLayer.dataProvider().attributeIndexes()
+            for myKey in myAttributes:
+                myStrings.append("%d: %s\n" % (
+                    myKey, myFeature[myKey].toString()))
             myStrings.append('------------------\n')
         LOGGER.debug('Mem table:\n %s' % myStrings)
         myFilePath = unique_filename(prefix='testLocalCities',
@@ -221,7 +226,7 @@ searchBoxes: None
         myExpectedString = myFile.readlines()
         myFile.close()
 
-        myDiff = difflib.unified_diff(myStrings, myExpectedString)
+        myDiff = difflib.unified_diff(myExpectedString, myStrings)
         myDiffList = list(myDiff)
         myDiffString = ''
         for _, myLine in enumerate(myDiffList):
@@ -272,8 +277,8 @@ searchBoxes: None
             myExpectedResult)
         assert myFatalitiesHtml == myExpectedResult, myMessage
 
-        myExpectedFatalities = {2: 0.47386375223673427,
-                                3: 0.024892573693488258,
+        myExpectedFatalities = {2: 0.0,  # rounded from 0.47386375223673427,
+                                3: 0.0,  # rounded from 0.024892573693488258,
                                 4: 0.0,
                                 5: 0.0,
                                 6: 0.0,
@@ -315,18 +320,9 @@ searchBoxes: None
         myShakeEvent = ShakeEvent(myShakeId)
 
         myValues = range(0, 12)
-        myExpectedResult = ['#FFFFFF',
-                            '#209fff',
-                            '#00cfff',
-                            '#55ffff',
-                            '#aaffff',
-                            '#fff000',
-                            '#ffa800',
-                            '#ff7000',
-                            '#ff0000',
-                            '#D00',
-                            '#800',
-                            '#400']
+        myExpectedResult = ['#FFFFFF', '#FFFFFF', '#209fff', '#00cfff',
+                            '#55ffff', '#aaffff', '#fff000', '#ffa800',
+                            '#ff7000', '#ff0000', '#D00', '#800']
         myResult = []
         for myValue in myValues:
             myResult.append(myShakeEvent.mmiColour(myValue))
@@ -338,42 +334,43 @@ searchBoxes: None
         myShakeId = '20120726022003'
         myShakeEvent = ShakeEvent(myShakeId)
         myTable = myShakeEvent.sortedImpactedCities()
-        myExpectedResult = [
-            {'dir_from': 13.119078636169434, 'dir_to': -166.88092041015625,
-             'roman': 'II', 'dist_to': 3.036229133605957, 'mmi-int': 2.0,
-             'name': 'Manado', 'mmi': 1.809999942779541, 'id': 207,
-             'population': 451893},
-            {'dir_from': -61.620426177978516, 'dir_to': 118.37957000732422,
-             'roman': 'II', 'dist_to': 2.4977917671203613, 'mmi-int': 2.0,
-             'name': 'Gorontalo', 'mmi': 2.25, 'id': 282,
-             'population': 144195},
-            {'dir_from': -114.04046630859375, 'dir_to': 65.95953369140625,
-             'roman': 'II', 'dist_to': 3.3138768672943115, 'mmi-int': 2.0,
-             'name': 'Luwuk', 'mmi': 1.5299999713897705, 'id': 215,
-             'population': 47778},
-            {'dir_from': 16.94407844543457, 'dir_to': -163.05592346191406,
-             'roman': 'II', 'dist_to': 2.504295825958252, 'mmi-int': 2.0,
-             'name': 'Tondano', 'mmi': 1.909999966621399, 'id': 57,
-             'population': 33317},
-            {'dir_from': 14.14267635345459, 'dir_to': -165.85733032226562,
-             'roman': 'II', 'dist_to': 2.5372657775878906, 'mmi-int': 2.0,
-             'name': 'Tomohon', 'mmi': 1.690000057220459, 'id': 58,
-             'population': 27624}]
-        myMessage = 'Got:\n%s\nExpected:\n%s\n' % (myTable, myExpectedResult)
-        assert myTable == myExpectedResult, myMessage
+
+        myFilePath = unique_filename(
+            prefix='testSortedImpactedCities',
+            suffix='.txt',
+            dir=temp_dir('test'))
+        myFile = file(myFilePath, 'wt')
+        myFile.writelines(str(myTable))
+        myFile.close()
+        myTable = str(myTable).replace(', \'', ',\n\'')
+        myTable += '\n'
+
+        myFixturePath = os.path.join(
+            dataDir(), 'tests', 'testSortedImpactedCities.txt')
+        myFile = file(myFixturePath, 'rt')
+        myExpectedString = myFile.read()
+        myFile.close()
+        myExpectedString = myExpectedString.replace(', \'', ',\n\'')
+
+        self.maxDiff = None
+        self.assertEqual(myExpectedString, myTable)
 
     def testImpactedCitiesTable(self):
         """Test getting impacted cities table."""
         myShakeId = '20120726022003'
         myShakeEvent = ShakeEvent(myShakeId)
         myTable, myPath = myShakeEvent.impactedCitiesTable()
-        myExpectedResult = 906
-        myTable = myTable.toNewlineFreeString()
-        myResult = len(myTable)
-        myMessage = ('Got:\n%s\nExpected:\n%s\nFor rendered table:\n%s' %
-                    (myResult, myExpectedResult, myTable))
-        assert myResult == myExpectedResult, myMessage
+        myExpectedStrings = [
+            '<td>Tondano</td><td>33</td><td>I</td>',
+            '<td>Luwuk</td><td>47</td><td>I</td>',
+            '<td>Bitung</td><td>137</td><td>I</td>',
+            '<td>Manado</td><td>451</td><td>I</td>',
+            '<td>Gorontalo</td><td>144</td><td>II</td>']
+        myTable = myTable.toNewlineFreeString().replace('   ', '')
+        for myString in myExpectedStrings:
+            self.assertIn(myString, myTable)
 
+        self.maxDiff = None
         myExpectedPath = (
             '/tmp/inasafe/realtime/shakemaps-extracted/'
             '20120726022003/affected-cities.html')
@@ -405,7 +402,9 @@ searchBoxes: None
                               u'Estimated fatalities'),
                           'fatalities-count': u'0',  # 44 only after render
                           'elapsed-time': u'',  # empty as it will change
-                          'legend-name': 'Population density',
+                          'legend-name': PyQt4.QtCore.QString(
+                              u'Population density'),
+                          'fatalities-range': '0 - 100',
                           'longitude-name': PyQt4.QtCore.QString(u'Longitude'),
                           'located-label': PyQt4.QtCore.QString(u'Located'),
                           'distance-unit': PyQt4.QtCore.QString(u'km'),
@@ -413,7 +412,7 @@ searchBoxes: None
                           'elapsed-time-name': PyQt4.QtCore.QString(
                               u'Elapsed time since event'),
                           'exposure-table-name': PyQt4.QtCore.QString(
-                              u'Estimated number of people exposed to each '
+                              u'Estimated number of people affected by each '
                               u'MMI level'),
                           'longitude-value': u'124\xb027\'0.00"E',
                           'city-table-name': PyQt4.QtCore.QString(
@@ -436,7 +435,10 @@ searchBoxes: None
                               u' be made solely on the information presented '
                               u'here and should always be verified by ground '
                               u'truthing and other reliable information '
-                              u'sources.'),
+                              u'sources. The fatality calculation assumes '
+                              u'that no fatalities occur for shake levels '
+                              u'below MMI 4. Fatality counts of less than 50 '
+                              u'are disregarded.'),
                           'depth-unit': PyQt4.QtCore.QString(u'km'),
                           'latitude-name': PyQt4.QtCore.QString(u'Latitude'),
                           'mmi': '5.0', 'map-name': PyQt4.QtCore.QString(
@@ -447,14 +449,15 @@ searchBoxes: None
                           'direction-relation': PyQt4.QtCore.QString(u'of'),
                           'credits': PyQt4.QtCore.QString(
                               u'Supported by the Australia-Indonesia Facility'
-                              u' for Disaster Reduction, '
-                              u'Geoscience Australia and the GFDRR.'),
+                              u' for Disaster Reduction, Geoscience Australia '
+                              u'and the World Bank-GFDRR.'),
                           'latitude-value': u'0\xb012\'36.00"S',
                           'time': '2:15:35', 'depth-value': '11.0'}
         myResult['elapsed-time'] = u''
-        myMessage = ('Got:\n%s\nExpected:\n%s\n' %
-             (myResult, myExpectedDict))
+        myMessage = 'Got:\n%s\nExpected:\n%s\n' % (myResult, myExpectedDict)
         self.maxDiff = None
+        myDifference = DictDiffer(myResult, myExpectedDict)
+        print myDifference.all()
         self.assertDictEqual(myExpectedDict, myResult, myMessage)
 
     def testEventInfoString(self):
@@ -510,14 +513,52 @@ searchBoxes: None
         myShakeId = '20120726022003'
         myShakeEvent = ShakeEvent(myShakeId, theLocale='en')
         myShakeEvent.extractDateTime('2012-08-07T01:55:12WIB')
-        self.assertEqual('01', myShakeEvent.hour)
-        self.assertEqual('55', myShakeEvent.minute)
-        self.assertEqual('12', myShakeEvent.second)
+        self.assertEqual(1, myShakeEvent.hour)
+        self.assertEqual(55, myShakeEvent.minute)
+        self.assertEqual(12, myShakeEvent.second)
         myShakeEvent.extractDateTime('2013-02-07T22:22:37WIB')
-        self.assertEqual('22', myShakeEvent.hour)
-        self.assertEqual('22', myShakeEvent.minute)
-        self.assertEqual('37', myShakeEvent.second)
+        self.assertEqual(22, myShakeEvent.hour)
+        self.assertEqual(22, myShakeEvent.minute)
+        self.assertEqual(37, myShakeEvent.second)
 
+
+class DictDiffer(object):
+    """
+    Taken from
+    http://stackoverflow.com/questions/1165352/
+                  fast-comparison-between-two-python-dictionary
+    Calculate the difference between two dictionaries as:
+    (1) items added
+    (2) items removed
+    (3) keys same in both but changed values
+    (4) keys same in both and unchanged values
+    """
+
+    def __init__(self, current_dict, past_dict):
+        self.current_dict, self.past_dict = current_dict, past_dict
+        self.set_current, self.set_past = set(current_dict.keys()), set(
+            past_dict.keys())
+        self.intersect = self.set_current.intersection(self.set_past)
+
+    def added(self):
+        return self.set_current - self.intersect
+
+    def removed(self):
+        return self.set_past - self.intersect
+
+    def changed(self):
+        return set(o for o in self.intersect if
+                   self.past_dict[o] != self.current_dict[o])
+
+    def unchanged(self):
+        return set(o for o in self.intersect if
+                   self.past_dict[o] == self.current_dict[o])
+
+    def all(self):
+        string = 'Added: %s\n' % self.added()
+        string += 'Removed: %s\n' % self.removed()
+        string += 'changed: %s\n' % self.changed()
+        return string
 if __name__ == '__main__':
     suite = unittest.makeSuite(TestShakeEvent, 'testLocalCities')
     runner = unittest.TextTestRunner(verbosity=2)

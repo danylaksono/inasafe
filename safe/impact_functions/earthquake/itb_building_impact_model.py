@@ -1,7 +1,7 @@
-"""Impact function based on ITB vulnerability model
+"""Impact function based on ITB vulnerability model.
 
-   This model was developed by Institut Tecknologi Bandung (ITB) and
-   implemented by Dr Hyeuk Ryu, Geoscience Australia
+   This model was developed by Institut Teknologi Bandung (ITB) and
+   implemented by Dr. Hyeuk Ryu, Geoscience Australia.
 
    Reference:
 
@@ -10,7 +10,7 @@
    Bali, 27-28 February 2012, 54pp.
 
    Methodology:
-   The ITB vulnerabilty model was heuristically developed (i.e. based on
+   The ITB vulnerability model was heuristically developed (i.e. based on
    expert opinion) through the Bali workshop. The model is defined with
    two parameters (median, and lognormal standard deviation) of cumulative
    lognormal distribution. The building type classification used in the
@@ -27,7 +27,7 @@ import os
 from safe.impact_functions.core import FunctionProvider
 from safe.impact_functions.core import get_hazard_layer, get_exposure_layer
 from safe.storage.vector import Vector
-from safe.common.numerics import lognormal_cdf
+from safe.common.numerics import log_normal_cdf
 from safe.common.utilities import ugettext as tr
 from safe.common.utilities import verify
 from safe.engine.interpolation import assign_hazard_values_to_exposure_data
@@ -86,6 +86,8 @@ class ITBEarthquakeBuildingDamageFunction(FunctionProvider):
 
     def run(self, layers):
         """Risk plugin for Padang building survey
+        :param layers: Hazard and exposure layers in a list
+        :type layers: list
         """
 
         # Extract data
@@ -133,7 +135,7 @@ class ITBEarthquakeBuildingDamageFunction(FunctionProvider):
 
             msg = 'Invalid parameter value for ' + building_type
             verify(beta + median > 0.0, msg)
-            percent_damage = lognormal_cdf(mmi,
+            percent_damage = log_normal_cdf(mmi,
                                            median=median,
                                            sigma=beta) * 100
 
@@ -169,23 +171,22 @@ class ITBEarthquakeBuildingDamageFunction(FunctionProvider):
         # Create report
         Hname = H.get_name()
         Ename = E.get_name()
-        impact_summary = ('<b>In case of "%s" the estimated impact to '
-                           '"%s" '
-                           'is&#58;</b><br><br><p>' % (Hname, Ename))
-        impact_summary += ('<table border="0" width="320px">'
-                   '   <tr><th><b>%s</b></th><th><b>%s</b></th></th>'
-                    '   <tr></tr>'
-                    '   <tr><td>%s&#58;</td><td>%i</td></tr>'
-                    '   <tr><td>%s (<10%%)&#58;</td><td>%i</td></tr>'
-                    '   <tr><td>%s (10-33%%)&#58;</td><td>%i</td></tr>'
-                    '   <tr><td>%s (33-66%%)&#58;</td><td>%i</td></tr>'
-                    '   <tr><td>%s (66-100%%)&#58;</td><td>%i</td></tr>'
-                    '</table></font>' % (tr('Buildings'), tr('Total'),
-                                    tr('All'), N,
-                                    tr('No damage'), count0,
-                                    tr('Low damage'), count10,
-                                    tr('Medium damage'), count25,
-                                    tr('High damage'), count50))
+        impact_summary = (
+            '<b>In case of "%s" the estimated impact to "%s" is&#58;</b><br>'
+            '<br><p>' % (Hname, Ename))
+        impact_summary += (
+            '<table border="0" width="320px">'
+            '   <tr><th><b>%s</b></th><th><b>%s</b></th></th>'
+            '   <tr></tr>'
+            '   <tr><td>%s&#58;</td><td>%i</td></tr>'
+            '   <tr><td>%s (<10%%)&#58;</td><td>%i</td></tr>'
+            '   <tr><td>%s (10-33%%)&#58;</td><td>%i</td></tr>'
+            '   <tr><td>%s (33-66%%)&#58;</td><td>%i</td></tr>'
+            '   <tr><td>%s (66-100%%)&#58;</td><td>%i</td></tr>'
+            '</table></font>' % (tr('Buildings'), tr('Total'), tr('All'), N,
+                                 tr('No damage'), count0, tr('Low damage'),
+                                 count10, tr('Medium damage'), count25,
+                                 tr('High damage'), count50))
         impact_summary += '<br>'  # Blank separation row
         impact_summary += '<b>' + tr('Assumption') + '&#58;</b><br>'
         # This is the proper text:
@@ -194,11 +195,13 @@ class ITBEarthquakeBuildingDamageFunction(FunctionProvider):
         #  'Australia and Institute of Teknologi Bandung.'))
         #tr('Unreinforced masonry is assumed where no '
         #  'structural information is available.'))
-        impact_summary += tr('Levels of impact are defined by post 2009 '
-                            'Padang earthquake survey conducted by Geoscience '
-                            'Australia and Institute of Teknologi Bandung.')
-        impact_summary += tr('Unreinforced masonry is assumed where no '
-                            'structural information is available.')
+        impact_summary += tr(
+            'Levels of impact are defined by post 2009 Padang earthquake '
+            'survey conducted by Geoscience Australia and Institute of '
+            'Teknologi Bandung.')
+        impact_summary += tr(
+            'Unreinforced masonry is assumed where no structural information '
+            'is available.')
         # Create style
         style_classes = [dict(label=tr('No damage'), min=0, max=10,
                               colour='#00ff00', transparency=0),
